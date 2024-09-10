@@ -31,7 +31,7 @@ const Hero = () => {
           </div>
           <div className="relative flex items-center ">
             <Image src={Cart} alt="Cart " className="ml-4" />
-            <div className="absolute top-[5px] left-5 ">
+            <div className="absolute top-[3px] left-[2rem] bottom-0 ">
               <span className="bg-[#2C742F] text-white w-[25px] h-[25px]  flex items-center justify-center rounded-full">
                 2
               </span>
