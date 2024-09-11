@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import { Cart, DownArrow, Heart, location, Logo, Search } from "@/assets";
-import Hero from "./Hero";
+import Hero from "../components/Hero";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
@@ -34,7 +35,8 @@ export default function Home() {
           </div>
         </div>
       </header>
-    <Hero />
+   <Hero />
+   <Navbar />
     </div>
   );
 }
