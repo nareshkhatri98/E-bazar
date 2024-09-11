@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import { CellPhone, DownArrow } from '@/assets';
+import { CellPhone, DownArrow } from '@/assets/icons';
 
 const Navbar = () => {
     const menuItem = [

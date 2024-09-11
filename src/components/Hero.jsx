@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Image from "next/image";
-import { Cart, DownArrow, Heart, location, Logo, Search } from "@/assets";
+import { Cart, DownArrow, Heart, location, Logo, Search } from "@/assets/icons";
 const Hero = () => {
   return (
     <div>
