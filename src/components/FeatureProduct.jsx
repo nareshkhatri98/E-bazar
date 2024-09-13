@@ -45,8 +45,10 @@ const FeatureProduct = () => {
             ))}
           </div>
         </div>
+       
       </section>
       <SellerSection />
+     
     </div>
   )
 }

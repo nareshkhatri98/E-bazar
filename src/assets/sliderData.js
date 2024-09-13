@@ -32,3 +32,4 @@ export const sliderData = [
       description: "Free shipping on all your order. we deliver, you enjoy",
     },
   ];
+ 

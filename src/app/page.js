@@ -6,6 +6,7 @@ import Service from "@/components/Service";
 import FeatureProduct from "@/components/FeatureProduct";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import TopCategory from "@/components/TopCategory";
 
 export default function Home() {
   return (
@@ -25,6 +26,8 @@ export default function Home() {
         <Service />
         {/* Features section */}
         <FeatureProduct />
+        {/* Top Category */}
+        <TopCategory />
       </main>
     </>
   );
