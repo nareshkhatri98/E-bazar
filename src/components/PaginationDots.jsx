@@ -1,14 +1,23 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const PaginationDots = (props) => {
   return (
-    <div
+    <motion.div
       onClick={() => props.moveToIndex(props.index)}
-      className={`h-2 ${
-        props.active ? "w-4  bg-[#00B207] transition-[width] duration-50" : "w-2  bg-[#B4CCB4]"
-      } rounded-full mx-1 cursor-pointer`}
-    ></div>
-  )
-}
+      className={`h-2 rounded-full mx-1 cursor-pointer ${props.active ? 'w-4 bg-[#00B207]' : 'w-2 bg-[#B4CCB4]'
+        }`}
+      animate={
+        props.active
+          ? {
+            scale: [1, 2, 2, 1, 1],
+            rotate: [360, 360, 180, 360, 0],
+            borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+          }
+          : {}
+      }
+    ></motion.div>
+  );
+};
 
-export default PaginationDots
+export default PaginationDots;

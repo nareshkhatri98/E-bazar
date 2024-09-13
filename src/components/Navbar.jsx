@@ -1,118 +1,60 @@
-import React from 'react'
-import Image from "next/image";
-import { CellPhone, DownArrow } from '@/assets/icons';
-import {
-    ArrowDownIcon,
-    CartIcon,
-    HeartIcon,
-    Location,
-    PhoneIcon,
-    SearchIcon,
-  } from "@/assets/icons";
+import React from 'react';
+import Image from 'next/image';
+import { ArrowDownIcon, PhoneIcon } from '@/assets/icons';
+import { motion } from "framer-motion"
+import SubHeroSection from './SubHeroSection';
 
-import {
-    Logo, 
-  } from "@/assets/images";
+const menuItem = [
+  { name: 'Home', hasDropDown: true  },
+  { name: 'Shop', hasDropDown: true },
+  { name: 'Pages', hasDropDown: true },
+  { name: 'Blog', hasDropDown: true },
+  { name: 'About Us', hasDropDown: false },
+  { name: 'Contact Us', hasDropDown: false }
+];
 
 const Navbar = () => {
-   
-    return (
-       <>
-      <div className="container mx-auto flex items-center justify-between">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="w-[11.4375rem] h-[2.375rem]"
-          />
-
-          <div className="flex items-center my-[1.6875rem] ">
-            <div className="flex items-center border border-r-0 border-[#E6E6E6] py-3 px-4 rounded-l-md min-w-[25rem]">
-              <Image src={SearchIcon} className="h-5 w-5" />
-              <input
-                type="text"
-                placeholder="Search"
-                className="outline-none border-none ml-2"
-              />
-            </div>
-            <button className="bg-[#00B207] py-[0.875rem] px-6 text-white font-semibold text-[0.875rem] rounded-r-md">
-              Search
-            </button>
-          </div>
-
+  return (
+    <>
+      <SubHeroSection />
+      <div className="bg-[#333333]">
+        <div className="flex text-white items-center justify-between container mx-auto">
+          <ul className="flex items-center py-[1.1875rem]">
+            {menuItem.map((item, index) => (
+              <li key={index} className="flex items-center mr-8">
+                <a href="#" className="text-[#999999]">
+                  {item.name}
+                </a>
+                {item.hasDropDown && (
+                  <Image
+                    src={ArrowDownIcon}
+                    alt="dropdown-arrow"
+                    className="ml-1 h-4 w-4"
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
+          
+          {/* Right side menu with phone icon */}
           <div className="flex items-center">
-            <div className="border-r-2 border-[#E6E6E6] pr-4">
-              <Image src={HeartIcon} className="h-8 w-8" />
-            </div>
-            <div className="ml-4 flex items-center relative">
-              <Image src={CartIcon} className="w-[2.125rem] h-[2.125rem]" />
-              <div className="absolute  top-[3px] left-[18px] bottom-0">
-                <span className="bg-[#2C742F] text-white w-[25px] h-[25px]  flex items-center justify-center rounded-full">
-                  2
-                </span>
-              </div>
-              <div className="ml-3">
-                <p> Shopping Cart</p>
-                <p> $57.70</p>
-              </div>
-            </div>
+            <motion.div 
+             whileHover={{ scale: 1.1 }}
+             whileTap={{ scale: 0.9 }}
+            
+
+            >
+            <Image src={PhoneIcon} alt="phone-icon" className="h-8 w-8 cursor-pointer" />
+            </motion.div>
+            
+            <span className="ml-2 text-[0.875rem] font-medium">
+              (219) 555-0114
+            </span>
           </div>
         </div>
-        <div className="bg-[#333333] ">
-          <div className="flex text-white items-center justify-between container mx-auto">
-            <div>
-              <ul className="flex items-center py-[1.1875rem]">
-                <li className="flex items-center mr-8">
-                  <a href="" className="text-[#999999]">
-                    Home
-                  </a>
-                  <Image
-                    src={ArrowDownIcon}
-                    alt="ar-d"
-                    className="ml-1 h-4 w-4"
-                  />
-                </li>
-                <li className="flex items-center mr-8">
-                  <a href="" className="text-[#999999]">
-                    Shop
-                  </a>
-                  <Image
-                    src={ArrowDownIcon}
-                    alt="ar-d"
-                    className="ml-1 h-4 w-4"
-                  />
-                </li>
-                <li className="flex items-center mr-8">
-                  <a href="" className="text-[#999999]">
-                    Pages
-                  </a>
-                  <Image
-                    src={ArrowDownIcon}
-                    alt="ar-d"
-                    className="ml-1 h-4 w-4"
-                  />
-                </li>
-                <li className="flex items-center mr-8">
-                  <a href="" className="text-[#999999]">
-                    About Us
-                  </a>
-                </li>
-                <li className="flex items-center mr-8">
-                  <a href="" className="text-[#999999]">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="flex items-center">
-              <Image src={PhoneIcon} alt="phone" className="h-8 w-8" />
-              <span className="ml-2 text-[0.875rem] font-medium">
-                (219) 555-0114
-              </span>
-            </div>
-          </div>
-        </div>
-       </>
-    );
-}
+      </div>
+    </>
+  );
+};
 
 export default Navbar;

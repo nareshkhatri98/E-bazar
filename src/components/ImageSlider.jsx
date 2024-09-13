@@ -56,11 +56,12 @@ const ImageSlider = () => {
                     <p className="text-[#808080] font-normal mt-3 text-[0.875rem] leading-[1.3125rem]">
                       {sliderItem.description}
                     </p>
-                    <button className="flex items-center mt-8 py-4 px-10 bg-[#00B207] text-white rounded-[3.3125rem] hover:bg-green-700 transition duration-150 ease-in-out ">
+                    <motion.button whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }} className="flex items-center mt-8 py-4 px-10 bg-[#00B207] text-white rounded-[3.3125rem] hover:bg-green-700 transition duration-150 ease-in-out ">
                       Shop Now{" "}
                       <motion.div
                         className="w-4 h-4 ml-1"
-                        initial={{ x: 0 }} 
+                        initial={{ x: 0 }}
                         animate={{ x: 11 }} // Move 10px to the right
                         transition={{
                           repeat: Infinity, // Repeat the animation infinitely
@@ -71,10 +72,10 @@ const ImageSlider = () => {
                         <Image
                           src={rightArrow}
                           alt="right arrow"
-                         
+
                         />
                       </motion.div>
-                    </button>
+                    </motion.button>
                   </div>
                   <div className="flex-1 py-[118px] px-[54.2]">
                     <Image src={SliderIcon} alt="slider icon" />
