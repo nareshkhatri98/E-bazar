@@ -2,6 +2,7 @@ import React from 'react'
 import Image from "next/image";
 import { bestSeller, HotSell, ratingIcon, topRated, OfferIcon } from '@/assets/products';
 import { rightArrow, VectorIcon } from '@/assets/images';
+import { CartIcon, EyeIcon, HeartIcon } from '@/assets/icons';
 
 const SellerSection = () => {
     return (
@@ -14,32 +15,61 @@ const SellerSection = () => {
                         {
                             HotSell.map((hotsell) => (
                                 <div key={hotsell} className='mt-4'>
-                                    <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg'>
-                                        <Image src={hotsell.image} className='w-[102px] h-[102px]' />
-                                        <div className='ml-3'>
+                                    <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg cursor-pointer relative group'>
+
+                                        {/* Product image */}
+                                        <Image src={hotsell.image} className='w-[102px] h-[102px]' alt={hotsell.title} />
+
+                                        {/* Product title (always visible) */}
+                                        <div className='ml-3 mt-[-20px]'>
                                             <h1 className='text-[#2C742F] font-normal text-[0.875rem]'>{hotsell.title}</h1>
-                                            <p className='text-[#1A1A1A] text-[1rem] font-medium'>{hotsell.price}</p>
-                                            <Image src={ratingIcon} className='mt-[6px]' />
+
+                                            {/* Product details (hidden on hover) */}
+                                            <div className='group-hover:hidden'>
+                                                <p className='text-[#1A1A1A] text-[1rem] font-medium'>{hotsell.price}</p>
+                                                <Image src={ratingIcon} className='mt-[6px]' alt='Rating icon' />
+                                            </div>
+                                            <div className='hidden items-center absolute right-6 p-2 group-hover:flex transition-all duration-500 gap-[1rem]'>
+                                                <Image src={CartIcon} alt="Cart icon" className='bg-[#00B207] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                                <Image src={EyeIcon} alt="View icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                                <Image src={HeartIcon} alt="Wishlist icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             ))
                         }
+
                     </div>
 
                     {/* for best seller */}
                     <div>
                         <h1 className='text[20px] font-medium text-[#1A1A1A] leading-[30px]'>Best Seller</h1>
                         {
-                            bestSeller.map((bestseller) => (
-                                <div key={bestseller} className='mt-4'>
-                                    <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg'>
-                                        <Image src={bestseller.image} className='w-[102px] h-[102px]' />
-                                        <div className='ml-3'>
-                                            <h1 className='text-[#2C742F] font-normal text-[0.875rem]'>{bestseller.title}</h1>
-                                            <p className='text-[#1A1A1A] text-[1rem] font-medium'>{bestseller.price}</p>
-                                            <Image src={ratingIcon} className='mt-[6px]' />
+                            bestSeller.map((bestSeller) => (
+                                <div key={bestSeller} className='mt-4'>
+                                    <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg cursor-pointer relative group'>
+
+                                        {/* Product image */}
+                                        <Image src={bestSeller.image} className='w-[102px] h-[102px]' alt={bestSeller.title} />
+
+                                        {/* Product title (always visible) */}
+                                        <div className='ml-3 mt-[-20px]'>
+                                            <h1 className='text-[#2C742F] font-normal text-[0.875rem]'>{bestSeller.title}</h1>
+
+                                            {/* Product details (hidden on hover) */}
+                                            <div className='group-hover:hidden'>
+                                                <p className='text-[#1A1A1A] text-[1rem] font-medium'>{bestSeller.price}</p>
+                                                <Image src={ratingIcon} className='mt-[6px]' alt='Rating icon' />
+                                            </div>
+                                            <div className='hidden items-center absolute right-6 p-2 group-hover:flex transition-all duration-500 gap-[1rem]'>
+                                                <Image src={CartIcon} alt="Cart icon" className='bg-[#00B207] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                                <Image src={EyeIcon} alt="View icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                                <Image src={HeartIcon} alt="Wishlist icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             ))
@@ -51,13 +81,27 @@ const SellerSection = () => {
                         {
                             topRated.map((topRated) => (
                                 <div key={topRated} className='mt-4'>
-                                    <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg'>
-                                        <Image src={topRated.image} className='w-[102px] h-[102px]' />
-                                        <div className='ml-3'>
+                                    <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg cursor-pointer relative group'>
+
+                                        {/* Product image */}
+                                        <Image src={topRated.image} className='w-[102px] h-[102px]' alt={topRated.title} />
+
+                                        {/* Product title (always visible) */}
+                                        <div className='ml-3 mt-[-20px]'>
                                             <h1 className='text-[#2C742F] font-normal text-[0.875rem]'>{topRated.title}</h1>
-                                            <p className='text-[#1A1A1A] text-[1rem] font-medium'>{topRated.price}</p>
-                                            <Image src={ratingIcon} className='mt-[6px]' />
+
+                                            {/* Product details (hidden on hover) */}
+                                            <div className='group-hover:hidden'>
+                                                <p className='text-[#1A1A1A] text-[1rem] font-medium'>{topRated.price}</p>
+                                                <Image src={ratingIcon} className='mt-[6px]' alt='Rating icon' />
+                                            </div>
+                                            <div className='hidden items-center absolute right-6 p-2 group-hover:flex transition-opacity duration-500 gap-[1rem]'>
+                                                <Image src={CartIcon} alt="Cart icon" className='bg-[#00B207] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                                <Image src={EyeIcon} alt="View icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                                <Image src={HeartIcon} alt="Wishlist icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             ))

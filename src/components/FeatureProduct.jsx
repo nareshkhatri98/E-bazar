@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from "next/image";
 import { GreenAppleIcon, products, ratingIcon } from "@/assets/products";
-import { CartIcon } from "@/assets/icons";
+import { CartIcon, EyeIcon, HeartIcon } from "@/assets/icons";
 import { motion } from "framer-motion"
 import SellerSection from './SellerSection';
 const FeatureProduct = () => {
   return (
     <div>
 
-<section className="mt-[11.25rem]">
+      <section className="mt-[11.25rem]">
         <h1 className="text-center text-[2.5rem] font-semibold  leading-[2.375rem]">
           Featured Products
         </h1>
@@ -18,10 +18,10 @@ const FeatureProduct = () => {
           <div className="w-[12px] h-[4px] opacity-[30%] bg-green-700  "></div>
         </div>
         {/* cart section */}
-        <div className="w-[1320px] h-[339px] container mx-auto relative ">
+        <div className="w-[1320px] h-[339px] container mx-auto relative cursor-pointer">
           <div className="grid grid-cols-5 mt-[50px] gap-4">
             {products.map((product, index) => (
-              <div key={index} className="w-[248px] border relative">
+              <div key={index} className="w-[248px] border relative group">
                 <Image src={product.image} alt="apple" />
                 <div className="mt-3 ml-4">
                   <p className="font-normal font-[Poppins] text-[0.875rem] leading-[1.3125rem]">
@@ -36,19 +36,32 @@ const FeatureProduct = () => {
                     className="mb-4 mt-[6px]"
                   />
                 </div>
-                <motion.div className="absolute bottom-[1rem] left-[11rem] w-10 h-10 bg-[#f2f2f2] rounded-full flex items-center justify-center cursor-pointer"
-                 whileHover={{ scale: 1.1 }}
-                 whileTap={{ scale: 0.9 }}>
+                <motion.div
+                  className="absolute bottom-[1rem] left-[11rem] w-10 h-10 bg-[#f2f2f2] rounded-full flex items-center justify-center cursor-pointer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <Image src={CartIcon} alt="cart icon" className="w-10 h-8" />
                 </motion.div>
+                <div className="absolute top-[64px] left-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Image
+                    src={EyeIcon}
+                    className="mt-[6px] w-[40px] h-[40px] bg-[#F2F2F2] border rounded-full p-[10px]"
+                  />
+                  <Image
+                    src={HeartIcon}
+                    className="mt-[6px] w-[40px] h-[40px] bg-[#F2F2F2] border rounded-full p-[10px]"
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
-       
+
+
       </section>
       <SellerSection />
-     
+
     </div>
   )
 }
