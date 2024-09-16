@@ -4,9 +4,14 @@ import MeatIcon from './meat.svg'
 import snackIcon from './snacks.svg'
 import softDrinksIcon from './softdrink.svg'
 import VegetablesIcon from './Vegetables.svg';
+import BestDealIcon from './bestDeals.svg';
+import SummerIcon from './summer.svg';
+import FatFreeICon from './fatfree.svg';
 
 
-export{FishIcon,FruitsIcon,MeatIcon,snackIcon,VegetablesIcon}
+
+
+export{FishIcon,FruitsIcon,MeatIcon,snackIcon,VegetablesIcon, BestDealIcon,FatFreeICon,SummerIcon}
 
 export const topCategory = [
     {

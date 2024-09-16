@@ -5,6 +5,8 @@ import { rightArrow } from '@/assets/images';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Button from './Button';
+import SaleCategory from './SaleCategory';
 
 const TopCategory = () => {
   const sliderRef = useRef(null);
@@ -13,8 +15,8 @@ const TopCategory = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6, // Show 6 slides at once
-    slidesToScroll: 1, // Scroll one slide at a time
+    slidesToShow: 6, 
+    slidesToScroll: 1, 
     centerMode: false,
     variableWidth: false,
   };
@@ -29,7 +31,7 @@ const TopCategory = () => {
 
   return (
     <div className='container mx-auto'>
-      <section className='mt-[6.25rem]'>
+      <section className='mt-[6.25rem] ml-[125px] mr-[125px]'>
         <h1 className="text-center text-[2.5rem] font-semibold leading-[2.375rem]">
           Top Category
         </h1>
@@ -65,13 +67,14 @@ const TopCategory = () => {
             <Image src={rightArrow} alt="Previous Arrow" />
           </div>
           <div 
-            className='absolute top-[50%] right-[-25px] bg-gray-300 w-[45px] h-[45px] rounded-full flex items-center justify-center cursor-pointer transform -translate-y-1/2' 
+            className='absolute top-[50%] right-[-50px] bg-gray-300 w-[45px] h-[45px] rounded-full flex items-center justify-center cursor-pointer transform -translate-y-1/2' 
             onClick={nextSlide}
           >
             <Image src={rightArrow} alt="Next Arrow" />
           </div>
         </div>
       </section>
+    
     </div>
   );
 };

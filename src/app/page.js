@@ -7,6 +7,7 @@ import FeatureProduct from "@/components/FeatureProduct";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import TopCategory from "@/components/TopCategory";
+import SaleCategory from "@/components/SaleCategory";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <FeatureProduct />
         {/* Top Category */}
         <TopCategory />
+       <SaleCategory />
       </main>
     </>
   );

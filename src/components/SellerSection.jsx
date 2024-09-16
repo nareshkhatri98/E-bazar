@@ -3,6 +3,7 @@ import Image from "next/image";
 import { bestSeller, HotSell, ratingIcon, topRated, OfferIcon } from '@/assets/products';
 import { rightArrow, VectorIcon } from '@/assets/images';
 import { CartIcon, EyeIcon, HeartIcon } from '@/assets/icons';
+import Button from './Button';
 
 const SellerSection = () => {
     return (
@@ -114,7 +115,7 @@ const SellerSection = () => {
                             <p className=' text-[12px] items-center uppercase font-[Poppins] text-[#1A1A1A] font-medium'>Summer Sale</p>
                             <p className='text-[#00B207] text-[2rem] font-bold font-[Poppins] leading-[32.5px] mt-2'>75% off</p>
 
-                            <button className='bg-[#FFFFFF] flex items-center w-[162px] h-[45px] p-6 round text-[1rem] font-semibold text-[#20B526] rounded-[43px] mt-4' >Shop now <Image src={VectorIcon} alt='vector icon' className='ml-2 text-[#00B207]' /></button>
+                            <Button />
                         </div>
                     </div>
 
