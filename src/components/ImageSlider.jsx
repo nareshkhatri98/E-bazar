@@ -64,9 +64,9 @@ const ImageSlider = () => {
                         initial={{ x: 0 }}
                         animate={{ x: 11 }} // Move 10px to the right
                         transition={{
-                          repeat: Infinity, // Repeat the animation infinitely
-                          repeatType: "reverse", // Reverse the animation (move back to start)
-                          duration: 0.5, // Duration for each cycle (0.5 seconds)
+                          repeat: Infinity, 
+                          repeatType: "reverse",
+                          duration: 0.5, 
                         }}
                       >
                         <Image

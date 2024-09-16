@@ -35,7 +35,6 @@ const SellerSection = () => {
                                                 <Image src={HeartIcon} alt="Wishlist icon" className='bg-[#F2F2F2] w-[40px] h-[40px] py-[10px] rounded-full' />
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             ))
@@ -120,10 +119,7 @@ const SellerSection = () => {
                     </div>
 
                 </div>
-
-
             </section>
-
         </div>
     )
 }

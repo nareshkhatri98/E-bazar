@@ -29,7 +29,7 @@ const Navbar = () => {
                   <Image
                     src={ArrowDownIcon}
                     alt="dropdown-arrow"
-                    className="ml-1 h-4 w-4"
+                    className="ml-1 h-4 w-4 cursor-pointer"
                   />
                 )}
               </li>
