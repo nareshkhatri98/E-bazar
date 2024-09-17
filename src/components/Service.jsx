@@ -14,7 +14,7 @@ import {
 const Service = () => {
   return (
     <div>
-        <section className="flex justify-between bg-[#FFFFFF] px-20 container mx-auto p-[2.5rem] my-[-10px] w-[87.5rem] h-[128px]  rounded-[8px] shadow-lg  absolute top-[63rem] left-64">
+        <section className="flex justify-between bg-[#FFFFFF] px-20 container mx-auto p-[2.5rem] my-[-10px] w-[87.5rem] h-[128px]  rounded-[8px] shadow-lg  absolute top-[65rem] left-64">
         <div className="flex">
           <Image src={deliveryTruck} alt="delivery truck" />
           <div className="ml-4 py-[.5rem]">
