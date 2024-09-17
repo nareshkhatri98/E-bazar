@@ -41,7 +41,7 @@ const TopCategory = () => {
           <div className="w-[12px] h-[4px] opacity-[30%] bg-green-700"></div>
         </div>
 
-        <div className='m-2 relative'>
+        <div className='m-2 relative cursor-pointer'>
           <Slider ref={sliderRef} {...settings}>
             {topCategory.map((topcategory, index) => (
               <div key={index} className='mt-[50px]'>

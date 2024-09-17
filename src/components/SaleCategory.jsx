@@ -8,7 +8,7 @@ const SaleCategory = () => {
             <section className=' mt-[100px] ml-[300px] mr-[300px] '>
                 <div className='flex gap-6 container mx-auto '>
                     <div className=' w-[424px] h-[536px] relative'>
-                        <Image src={BestDealIcon} />
+                        <Image src={BestDealIcon} alt='BestDealIcon' />
                         <div className='absolute top-10 right-14 flex flex-col items-center justify-center'>
                             <p className='text-[1rem] uppercase text-Gray-1 font-medium'>Summer Salee</p>
                             <h1 className='text-Gray-1 text-[2.57rem]  font[Poppins] font-semibold'>Sale of the Month</h1>
@@ -19,7 +19,7 @@ const SaleCategory = () => {
                         </div>
                     </div>
                     <div className=' w-[424px] h-[536px] relative'>
-                        <Image src={FatFreeICon} />
+                        <Image src={FatFreeICon} alt='FatFreeICon' />
                         <div className='absolute top-10 right-14 flex flex-col items-center justify-center'>
                             <p className='text-[1rem] uppercase text-Gray-1 font-medium'>85% Fat Free</p>
                             <h1 className='text-Gray-1 text-[2.857rem]  font[Poppins] font-semibold'>Low-Fat Meat</h1>
@@ -28,7 +28,7 @@ const SaleCategory = () => {
                         </div>
                     </div>
                     <div className=' w-[424px] h-[536px] relative'>
-                        <Image src={SummerIcon} />
+                        <Image src={SummerIcon} alt='SummerIcon' />
                         <div className='absolute top-10 right-14 flex flex-col items-center justify-center'>
                             <p className='text-[1rem] uppercase text-[#1A1A1A] font-medium '>Summer Salee</p>
                             <h1 className='text-[#1A1A1A] text-[2.857rem]  font[Poppins] font-semibold'>100% Fresh Fruit</h1>

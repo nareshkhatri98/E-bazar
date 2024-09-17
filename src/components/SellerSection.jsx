@@ -4,6 +4,7 @@ import { bestSeller, HotSell, ratingIcon, topRated, OfferIcon } from '@/assets/p
 import { rightArrow, VectorIcon } from '@/assets/images';
 import { CartIcon, EyeIcon, HeartIcon } from '@/assets/icons';
 import Button from './Button';
+import Start from './Start';
 
 const SellerSection = () => {
     return (
@@ -14,8 +15,8 @@ const SellerSection = () => {
                     <div>
                         <h1 className='text[20px] font-medium text-[#1A1A1A] leading-[30px]'>Hot Deals</h1>
                         {
-                            HotSell.map((hotsell) => (
-                                <div key={hotsell} className='mt-4'>
+                            HotSell.map((hotsell,index) => (
+                                <div key={index} className='mt-4'>
                                     <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg cursor-pointer relative group'>
 
                                         {/* Product image */}
@@ -28,7 +29,7 @@ const SellerSection = () => {
                                             {/* Product details (hidden on hover) */}
                                             <div className='group-hover:hidden'>
                                                 <p className='text-[#1A1A1A] text-[1rem] font-medium'>{hotsell.price}</p>
-                                                <Image src={ratingIcon} className='mt-[6px]' alt='Rating icon' />
+                                                <Start star={hotsell.rating} />
                                             </div>
                                             <div className='hidden items-center absolute right-6 p-2 group-hover:flex transition-all duration-500 gap-[1rem]'>
                                                 <Image src={CartIcon} alt="Cart icon" className='bg-[#00B207] w-[40px] h-[40px] py-[10px] rounded-full' />
@@ -47,8 +48,8 @@ const SellerSection = () => {
                     <div>
                         <h1 className='text[20px] font-medium text-[#1A1A1A] leading-[30px]'>Best Seller</h1>
                         {
-                            bestSeller.map((bestSeller) => (
-                                <div key={bestSeller} className='mt-4'>
+                            bestSeller.map((bestSeller,index) => (
+                                <div key={index} className='mt-4'>
                                     <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg cursor-pointer relative group'>
 
                                         {/* Product image */}
@@ -61,7 +62,7 @@ const SellerSection = () => {
                                             {/* Product details (hidden on hover) */}
                                             <div className='group-hover:hidden'>
                                                 <p className='text-[#1A1A1A] text-[1rem] font-medium'>{bestSeller.price}</p>
-                                                <Image src={ratingIcon} className='mt-[6px]' alt='Rating icon' />
+                                                <Start star={bestSeller.rating} />
                                             </div>
                                             <div className='hidden items-center absolute right-6 p-2 group-hover:flex transition-all duration-500 gap-[1rem]'>
                                                 <Image src={CartIcon} alt="Cart icon" className='bg-[#00B207] w-[40px] h-[40px] py-[10px] rounded-full' />
@@ -79,8 +80,8 @@ const SellerSection = () => {
                     <div>
                         <h1 className='text[20px] font-medium text-[#1A1A1A] leading-[30px]'>Top Rated</h1>
                         {
-                            topRated.map((topRated) => (
-                                <div key={topRated} className='mt-4'>
+                            topRated.map((topRated,index) => (
+                                <div key={index} className='mt-4'>
                                     <div className='flex items-center border border-emerald-500 w-[312px] h-[116px] rounded-[6px] shadow-lg cursor-pointer relative group'>
 
                                         {/* Product image */}
@@ -93,7 +94,7 @@ const SellerSection = () => {
                                             {/* Product details (hidden on hover) */}
                                             <div className='group-hover:hidden'>
                                                 <p className='text-[#1A1A1A] text-[1rem] font-medium'>{topRated.price}</p>
-                                                <Image src={ratingIcon} className='mt-[6px]' alt='Rating icon' />
+                                                <Start star={topRated.rating} />
                                             </div>
                                             <div className='hidden items-center absolute right-6 p-2 group-hover:flex transition-opacity duration-500 gap-[1rem]'>
                                                 <Image src={CartIcon} alt="Cart icon" className='bg-[#00B207] w-[40px] h-[40px] py-[10px] rounded-full' />
@@ -109,7 +110,7 @@ const SellerSection = () => {
                     </div>
                     {/* offer section */}
                     <div className='relative'>
-                        <Image src={OfferIcon} />
+                        <Image src={OfferIcon} alt='OfferIcon' />
                         <div className='absolute top-10 left-[80px]'>
 
                             <p className=' text-[12px] items-center uppercase font-[Poppins] text-[#1A1A1A] font-medium'>Summer Sale</p>

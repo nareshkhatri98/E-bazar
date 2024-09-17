@@ -4,6 +4,7 @@ import { GreenAppleIcon, products, ratingIcon } from "@/assets/products";
 import { CartIcon, EyeIcon, HeartIcon } from "@/assets/icons";
 import { motion } from "framer-motion"
 import SellerSection from './SellerSection';
+import Start from './Start';
 const FeatureProduct = () => {
   return (
     <div>
@@ -30,11 +31,9 @@ const FeatureProduct = () => {
                   <p className="text-[1rem] font-medium text-[#1A1A1A] leading-[1.5rem]">
                     {product.price}
                   </p>
-                  <Image
-                    src={ratingIcon}
-                    alt="rating icon"
-                    className="mb-4 mt-[6px]"
-                  />
+                 <div className='mb-4'>
+                 <Start star={product.rating}  />
+                 </div>
                 </div>
                 <motion.div
                   className="absolute bottom-[1rem] left-[11rem] w-10 h-10 bg-[#f2f2f2] rounded-full flex items-center justify-center cursor-pointer"
@@ -45,11 +44,11 @@ const FeatureProduct = () => {
                 </motion.div>
                 <div className="absolute top-[64px] left-48 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Image
-                    src={EyeIcon}
+                    src={EyeIcon} alt='EyeIcon'
                     className="mt-[6px] w-[40px] h-[40px] bg-[#F2F2F2] border rounded-full p-[10px]"
                   />
                   <Image
-                    src={HeartIcon}
+                    src={HeartIcon} alt='HeartIcon'
                     className="mt-[6px] w-[40px] h-[40px] bg-[#F2F2F2] border rounded-full p-[10px]"
                   />
                 </div>
