@@ -19,8 +19,10 @@ const FeatureProduct = () => {
           <div className="w-[12px] h-[4px] opacity-[30%] bg-green-700"></div>
         </div>
         {/* cart section */}
-        <div className="container mx-auto relative cursor-pointer w-full px-4 lg:px-0">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-[50px]">
+        {/* <div className="container mx-auto relative cursor-pointer w-full px-4 lg:px-0"> */}
+        <div>
+          <div className=' container mx-auto mt-10'>
+          <div className="grid grid-cols-5  px-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {products.map((product, index) => (
               <div key={index} className="w-full sm:w-[200px] md:w-[248px] border relative group">
                 <Image src={product.image} alt={product.title} className="w-full h-auto" />
@@ -36,7 +38,7 @@ const FeatureProduct = () => {
                   </div>
                 </div>
                 <motion.div
-                  className="absolute bottom-[1rem] left-[50%] transform -translate-x-1/2 w-10 h-10 bg-[#f2f2f2] rounded-full flex items-center justify-center cursor-pointer"
+                  className="absolute bottom-[1rem] left-[70%] transform-translate-x-1/2 w-10 h-10 bg-[#f2f2f2] rounded-full flex items-center justify-center cursor-pointer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -56,6 +58,7 @@ const FeatureProduct = () => {
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>

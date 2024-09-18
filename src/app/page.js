@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import TopCategory from "@/components/TopCategory";
 import SaleCategory from "@/components/SaleCategory";
+import NewProduct from "@/components/NewProduct";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         {/* Top Category */}
         <TopCategory />
        <SaleCategory />
+       <NewProduct />
       </main>
     </>
   );
