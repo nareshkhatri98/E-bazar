@@ -6,6 +6,17 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontSize: {
+      'display-01': ['4.5rem', {
+        lineHeight: '5.4rem',
+        fontWeight: '500',
+      }],
+      '3xl': ['1.875rem', {
+        lineHeight: '2.25rem',
+        letterSpacing: '-0.02em',
+        fontWeight: '700',
+      }],
+    },
     extend: {
       colors: {
         background: "var(--background)",
