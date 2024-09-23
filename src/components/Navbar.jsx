@@ -17,12 +17,12 @@ const Navbar = () => {
   return (
     <>
       <SubHeroSection />
-      <div className="bg-[#333333]">
+      <div className="bg-Gray-8">
         <div className="flex text-white items-center justify-between container mx-auto">
           <ul className="flex items-center py-[1.1875rem]">
             {menuItem.map((item, index) => (
               <li key={index} className="flex items-center mr-8">
-                <a href="#" className="text-[#999999]">
+                <a href="#" className="text-Gray-4">
                   {item.name}
                 </a>
                 {item.hasDropDown && (

@@ -84,7 +84,7 @@ module.exports = {
           0.5: "#F2F2F2",
           
         },
-        "Green Gray": {
+        "Green-Gray": {
           9: "#002603",
           8: "#173B1A",
           7: "#2B572E",

@@ -5,7 +5,7 @@ const PaginationDots = (props) => {
   return (
     <motion.div
       onClick={() => props.moveToIndex(props.index)}
-      className={`h-2 rounded-full mx-1 cursor-pointer ${props.active ? 'w-4 bg-[#00B207]' : 'w-2 bg-[#B4CCB4]'
+      className={`h-2 rounded-full mx-1 cursor-pointer ${props.active ? 'w-4 bg-primary' : 'w-2 bg-Green-Gray-2'
         }`}
       animate={
         props.active

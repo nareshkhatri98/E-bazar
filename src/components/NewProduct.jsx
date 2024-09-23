@@ -14,7 +14,7 @@ const NewProduct = () => {
     <section className="mt-[11.25rem] container mx-auto ">
      <div className='flex items-center justify-between '>
      <h1 className="text-start text-[2.5rem] font-semibold leading-[2.375rem] ml-24">
-        Featured Products
+        New Products
       </h1>
      <div className='mr-32 flex items-center gap-1'>
      <span className=' cursor-pointer text-primary'>View All </span>
@@ -23,7 +23,7 @@ const NewProduct = () => {
      </div>
       <div className="flex justify-start gap-1 mt-4 ml-24">
         <div className="w-[12px] h-[4px] opacity-[30%] bg-green-700"></div>
-        <div className="w-[40px] h-[4px] bg-[#00B207]"></div>
+        <div className="w-[40px] h-[4px] bg-primary"></div>
         <div className="w-[12px] h-[4px] opacity-[30%] bg-green-700"></div>
       </div>
       {/* cart section */}
@@ -35,10 +35,10 @@ const NewProduct = () => {
             <div key={index} className="w-full sm:w-[200px] md:w-[248px] border relative group">
               <Image src={product.image} alt={product.title} className="w-full h-auto" />
               <div className="mt-3 ml-4">
-                <p className="font-normal font-[Poppins] text-[0.875rem] leading-[1.3125rem]">
+                <p className="text-Body-Small font-400">
                   {product.title}
                 </p>
-                <p className="text-[1rem] font-medium text-[#1A1A1A] leading-[1.5rem]">
+                <p className="text-Body-Medium  font-500 text-Gray-9">
                   {product.price}
                 </p>
                 <div className='mb-4'>
@@ -46,7 +46,7 @@ const NewProduct = () => {
                 </div>
               </div>
               <motion.div
-                className="absolute bottom-[1rem] left-[70%] transform-translate-x-1/2 w-10 h-10 bg-[#f2f2f2] rounded-full flex items-center justify-center cursor-pointer"
+                className="absolute bottom-[1rem] left-[70%] transform-translate-x-1/2 w-10 h-10 bg-Gray-0.5 rounded-full flex items-center justify-center cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -56,12 +56,12 @@ const NewProduct = () => {
                 <Image
                   src={EyeIcon}
                   alt="Eye Icon"
-                  className="w-[40px] h-[40px] bg-[#F2F2F2] border rounded-full p-[10px]"
+                  className="w-[40px] h-[40px] bg-Gray-0.5 border rounded-full p-[10px]"
                 />
                 <Image
                   src={HeartIcon}
                   alt="Heart Icon"
-                  className="w-[40px] h-[40px] bg-[#F2F2F2] border rounded-full p-[10px]"
+                  className="w-[40px] h-[40px] bg-Gray-0.5 border rounded-full p-[10px]"
                 />
               </div>
             </div>

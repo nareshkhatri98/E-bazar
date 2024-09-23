@@ -39,22 +39,22 @@ const ImageSlider = () => {
             <div key={sliderItem.id}>
               <div className="flex flex-col lg:flex-row">
                 <div className="py-[50px] lg:py-[182px] px-[20px] lg:px-[100px]">
-                  <p className="text-[#00B207] text-[1rem] lg:text-[1.2rem] font-medium">
+                  <p className="text-primary text-Body-Small lg:text-[1.2rem] font-500">
                     {sliderItem.title}
                   </p>
-                  <h1 className="text-[2rem] lg:text-[4.5rem] leading-[2.5rem] lg:leading-[5.4rem] font-semibold mt-2">
+                  <h1 className="text-display-01 lg:text-[4.5rem] leading-[2.5rem] lg:leading-[5.4rem] font-600 mt-2">
                     {sliderItem.subTitle} <br /> {sliderItem.subTitle1}
                   </h1>
-                  <p className="mt-4 lg:mt-7 text-[1.2rem] lg:text-[2rem] font-semibold">
-                    Sale up to <span className="text-[#FF8A00]">{sliderItem.discount}</span>
+                  <p className="mt-4 lg:mt-7 text-Heading-05 lg:text-[2rem] font-400">
+                    Sale up to <span className="text-Warning text-Heading-05 font-600">{sliderItem.discount}</span>
                   </p>
-                  <p className="text-[#808080] font-normal mt-3 text-[0.875rem] leading-[1.3125rem]">
+                  <p className="text-Gray-5 font-400 mt-3 text-Body-Small">
                     {sliderItem.description}
                   </p>
                   <motion.button 
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }} 
-                    className="flex items-center mt-6 lg:mt-8 py-3 lg:py-4 px-6 lg:px-10 bg-[#00B207] text-white rounded-[3.3125rem] hover:bg-green-700 transition duration-150 ease-in-out"
+                    className="flex items-center mt-6 lg:mt-8 py-3 lg:py-4 px-6 lg:px-10 bg-primary text-white rounded-[3.3125rem] hover:bg-green-700 transition duration-150 ease-in-out"
                   >
                     Shop Now
                     <motion.div
