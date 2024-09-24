@@ -2,37 +2,43 @@
 import React, { useEffect } from 'react'
 
 
-const checkEven = () => {
-    return new Promise((resolve, reject) => {
-        if (a % 2 === 0) {
-            resolve("this is even number");
-        }
-        else {
-            setTimeout(() => {
-                reject("this is odd number");
-            }, 2000);
 
-        }
+// checkEvenNo(2)
+// .then((val) => {
+//   console.log(val, " -> Success");
+// })
+// .catch((error) => {
+//   console.log(error, " -> Failure");
+// });
+
+const checkEvenNo = (a) => {
+    return new Promise((resolve, reject) => {
+      if (a % 2 === 0) {
+        setTimeout(() => {
+          resolve("THis is even no");
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          reject("THis is odd no");
+        }, 2000);
+      }
     });
-}
-checkEven(2);
+  };
 
 
 const AsyncAwait = () => {
     const getValue = async () => {
         try {
-            const value = await checkEven(3);
-            console.log(value);
-
+          const value = await checkEvenNo(3);
+          console.log(value);
         } catch (err) {
-
+          console.log("err", err);
         }
-    }
-
-    useEffect(() => {
+      };
+    
+      useEffect(() => {
         getValue();
-    }, [])
-    return (
+      }, []);(
         <div>
             <h1>Hello</h1>
         </div>
