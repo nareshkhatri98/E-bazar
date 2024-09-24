@@ -16,10 +16,10 @@ export default function Home() {
       <main>
         <header>
           {/* hero section */}
-          <Hero />
-
-          {/* navbar */}
-          <Navbar />
+          {/* <Hero /> */}
+{/* 
+          navbar
+          <Navbar /> */}
         </header>
         {/* Image slider */}
         <ImageSlider />
