@@ -7,5 +7,6 @@ import shoppingIcon from './shopping-bag.svg'
 import packageIcon  from './package.svg' 
 import containerIcon from './Container.svg'
 import VectorIcon from './Vector.svg'
+import leftIcon from './leftArrow.svg'
 
-export { Logo, rightArrow, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon };
+export { Logo, rightArrow, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };

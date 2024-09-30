@@ -9,6 +9,8 @@ import Navbar from "@/components/Navbar";
 import TopCategory from "@/components/TopCategory";
 import SaleCategory from "@/components/SaleCategory";
 import NewProduct from "@/components/NewProduct";
+import ClientTestimonial from "@/components/ClientTestimonial";
+import SocialMedia from "@/components/SocialMedia";
 
 export default function Home() {
   return (
@@ -32,6 +34,8 @@ export default function Home() {
         <TopCategory />
        <SaleCategory />
        <NewProduct />
+       <ClientTestimonial />
+       <SocialMedia />
       </main>
     </>
   );

@@ -95,6 +95,7 @@ module.exports = {
           2: "#B4CCB4",
           1: "#DAE5DA",
           .5: "#EDF2EE"
+          
         },
       },
     },
