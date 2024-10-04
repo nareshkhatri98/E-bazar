@@ -11,6 +11,7 @@ import SaleCategory from "@/components/SaleCategory";
 import NewProduct from "@/components/NewProduct";
 import ClientTestimonial from "@/components/ClientTestimonial";
 import SocialMedia from "@/components/SocialMedia";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
        <NewProduct />
        <ClientTestimonial />
        <SocialMedia />
+       <Footer />
       </main>
     </>
   );
