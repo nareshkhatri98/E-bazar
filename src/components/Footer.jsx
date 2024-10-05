@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Logo } from '@/assets/images'
-import { AppleIcon, PlayStoreIcon } from '@/assets/icons'
+import { AppleIcon, CartICons, FacebookIcon, InstaIcon, MethodApplePayIcon, MethodDiscoverIcon, MethodMasterCardIcon, MethodVisaIcon, PinterestIcon, PlayStoreIcon, TwitterIcon } from '@/assets/icons'
 
 
 const Footer = () => {
@@ -77,19 +77,22 @@ const Footer = () => {
         <hr className='border-b border-Gray-8 container mx-auto' />
 
         <div className='mt-6 flex items-center container mx-auto justify-between'>
-          <div className='flex'>
-            <Image src={AppleIcon}/>
-            <Image src={PlayStoreIcon}/>
+          <div className='flex gap-4'>
+            <Image src={FacebookIcon} alt="facebook" />
+            <Image src={InstaIcon} alt="inst" /> 
+            <Image  src={TwitterIcon} alt="twitter"/>
+            <Image  src={PinterestIcon} alt="pinter"/>
           </div>
           <div className='text-white'>
             <p>Ecobazar eCommerce © 2021. All Rights Reserved</p>
           </div>
-          <div className='flex'>
-          <Image src={AppleIcon}/>
-          <Image src={PlayStoreIcon}/>
+          <div className='flex gap-2'>
+         <Image src={MethodApplePayIcon} alt="methodapple" />
+         <Image src={MethodDiscoverIcon} alt="methodDescover" />
+         <Image src={MethodVisaIcon} alt="MethodVisaIcon"/>
+         <Image src={MethodMasterCardIcon}  alt="MethodMasterCardIcon"/>
+         <Image src={CartICons} alt="CartICons" />
           </div>
-
-
         </div>
       </section>
     </>
