@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+
+import TopBanner from "./TopBanner";
+import FilterSection from "./FilterSection";
+import Footer from "@/components/Footer";
+import ProductPage from "./ProductPage";
 
 const page = () => {
   return (
-    <div>
-        <h1>This is shop</h1>
-    </div>
-  )
-}
+   <>
+   <TopBanner/>
+   <FilterSection/>
+   <ProductPage />
+   <Footer/>
+   </>
+  );
+};
 
-export default page
+export default page;
