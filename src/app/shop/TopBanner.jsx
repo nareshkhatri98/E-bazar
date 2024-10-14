@@ -1,4 +1,6 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
+
 
 import Image from "next/image";
 import DiscountImage from "@/assets/shop-page-images/discount.jpg";
@@ -8,6 +10,7 @@ import { ArrowDownIcon } from "@/assets/icons";
 import { rightArrow} from "@/assets/images";
 
 const TopBanner = () => {
+
   return (
     <div className="container mx-auto">
       {/* for top banner */}
@@ -49,6 +52,7 @@ const TopBanner = () => {
             00 : <span className="ml-[9px]"> 02 : </span>{" "}
             <span className="ml-[9px]"> 18 : </span> <span>45 </span>{" "}
           </h1>
+         
           <h1 className="text-Body-Tiny uppercase text-Gray-4 mt-1">
             DAYS <span className="ml-[22px]">Hours </span>{" "}
             <span className="ml-[22px]">Mins </span>{" "}
@@ -59,6 +63,7 @@ const TopBanner = () => {
           Shop now <Image src={rightArrow} alt="vector icon" className="ml-2" />
         </button>
       </div>
+     
     </div>
   )
 }
