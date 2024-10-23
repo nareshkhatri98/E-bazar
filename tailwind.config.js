@@ -66,8 +66,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#00B207",
-        "Soft Primary": "#84D187",
-        "Hard Primary": "#2C742F",
+        "Soft-Primary": "#84D187",
+        "Hard-Primary": "#2C742F",
+        
         Warning: "#FF8A00",
         Danger: "#EA4B48",
         White: "#FFFFFF",

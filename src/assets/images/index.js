@@ -9,4 +9,5 @@ import containerIcon from './Container.svg'
 import VectorIcon from './Vector.svg'
 import leftIcon from './leftArrow.svg'
 
+
 export { Logo, rightArrow, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };
