@@ -62,6 +62,9 @@ module.exports = {
       },
     
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(180deg, #F2F2F2 0%, #FFFFFF 100%)',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

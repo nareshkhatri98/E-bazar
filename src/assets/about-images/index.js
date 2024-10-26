@@ -14,6 +14,7 @@ import starsIcon from './stars.svg'
 import stepsIcon from './steps.svg'
 import bookIcon from './book.svg'
 import backgroundIcon from './BG.svg'
+import tickIcon from './tick.svg'
 
-export {aboutICon1,aboutIcon2, backgroundIcon,aboutIcon3,aboutIcon4,aboutIcon5,aboutIcon6,aboutIcon7, leafIcon,mangoIcon,seriesIcon,foodIcon,foodIcon2,starsIcon, stepsIcon,bookIcon
+export {tickIcon,aboutICon1,aboutIcon2, backgroundIcon,aboutIcon3,aboutIcon4,aboutIcon5,aboutIcon6,aboutIcon7, leafIcon,mangoIcon,seriesIcon,foodIcon,foodIcon2,starsIcon, stepsIcon,bookIcon
 }
