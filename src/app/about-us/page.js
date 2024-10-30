@@ -229,7 +229,7 @@ const Page = () => {
             <p>Ceo & Founder</p>
           </div>
           <div className="w-[312px] h-[368px] bg-[#FFFF] rounded-[20px]">
-            <Image src={aboutIcon7bg-custom-gradient}/>
+            <Image src={aboutIcon7}/>
             <h1>Jenny Wilson</h1>
             <p>Ceo & Founder</p>
           </div>

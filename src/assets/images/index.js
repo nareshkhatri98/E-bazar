@@ -8,6 +8,7 @@ import packageIcon  from './package.svg'
 import containerIcon from './Container.svg'
 import VectorIcon from './Vector.svg'
 import leftIcon from './leftArrow.svg'
+import popupImage from './PopupImg.svg'
+import closeIcon from './crossIcon.svg'
 
-
-export { Logo, rightArrow, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };
+export { Logo,popupImage, rightArrow, closeIcon, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };

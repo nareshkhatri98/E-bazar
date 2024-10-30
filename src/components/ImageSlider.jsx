@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SliderIcon } from "@/assets/images";
+import { closeIcon, popupImage, SliderIcon } from "@/assets/images";
 import rightArrow from '@/assets/images/right-arrow.svg';
 import Image from "next/image";
 import Pagination from './Pagination';
@@ -51,9 +51,9 @@ const ImageSlider = () => {
                   <p className="text-Gray-5 font-400 mt-3 text-Body-Small">
                     {sliderItem.description}
                   </p>
-                  <motion.button 
+                  <motion.button
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }} 
+                    whileTap={{ scale: 0.9 }}
                     className="flex items-center mt-6 lg:mt-8 py-3 lg:py-4 px-6 lg:px-10 bg-primary text-white rounded-[3.3125rem] hover:bg-green-700 transition duration-150 ease-in-out"
                   >
                     Shop Now
@@ -80,6 +80,31 @@ const ImageSlider = () => {
         </Slider>
         <Pagination activeIndex={activeIndex} moveToIndex={moveToIndex} />
       </section>
+      {/*  for popup */}
+      <div className='w-[872px] h-[400px]   rounded-[8px] flex mt-96 relative'>
+        <div>
+          <Image src={popupImage} alt='popupImage' className='w-[354px] h-[380px] rounded-[4px] mt-[10px] ml-[10px]' />
+        </div>
+       <div className=' right-4 top-[8px] text-3xl absolute'>
+       <Image  src={closeIcon}/>
+       </div>
+        <div>
+          <div>
+            <h1 className='text-Heading-03 font-600 text-Gray-9 ml-10 mt-[50px] text-center'>Subcribe to Our <span className='ml-10'>Newsletter</span></h1>
+
+          </div>
+          <div className='w-[428px] h-[48px] mt-[10px]'>
+            <p className='text-Body-Medium font-400 text-Gray-4 ml-10 text-center'>Subscribe to our newlletter and Save your <span className='font-600 text-Warning'>20%  money</span> with discount code today.</p>
+          </div>
+          <div className='flex items-center mt-[24.5px]'>
+           <input type="text" placeholder='Enter your email' className='w-[343px] h-[49px] ml-[40px] border-2 rounded-l-[46px] p-5' />
+            <button className='w-[147px] h-[49px] bg-primary text-Body-Small font-600 text-white ml-[-20px] rounded-[46px]'>Subscribe</button>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 };
