@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const menuItem = [
   { name: 'Home', href: '/', hasDropDown: true },
   { name: 'Shop', href: '/shop', hasDropDown: true },
-  { name: 'Blog', href: '/blog', hasDropDown: true },
+ 
   { name: 'About Us', href: '/about-us', hasDropDown: false },
   { name: 'Contact Us', href: '/contact', hasDropDown: false },
 ];

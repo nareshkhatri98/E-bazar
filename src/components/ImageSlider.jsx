@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,14 +19,22 @@ const ImageSlider = () => {
   };
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
   const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const moveToIndex = (index) => {
     sliderRef.current.slickGoTo(index);
   };
 
   return (
-    <div className="px-4">
+    <div className="px-4 relative">
       <section className="container mx-auto bg-[#EDF2EE] rounded-[8px] relative w-full lg:w-[95rem] h-auto lg:h-[804px] mt-6">
         <Slider
           ref={sliderRef}
@@ -79,32 +87,37 @@ const ImageSlider = () => {
           ))}
         </Slider>
         <Pagination activeIndex={activeIndex} moveToIndex={moveToIndex} />
+
+        {/* Popup section */}
+        {showPopup && (
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[872px] h-[400px] rounded-[8px] flex bg-white shadow-lg z-50">
+            <div>
+              <Image src={popupImage} alt="popupImage" className="w-[354px] h-[380px] rounded-[4px] mt-[10px] ml-[10px]" />
+            </div>
+            <div className="right-4 top-[8px] text-3xl absolute cursor-pointer" onClick={() => setShowPopup(false)}>
+              <Image src={closeIcon} alt="close icon" />
+            </div>
+            <div>
+              <h1 className="text-Heading-03 font-600 text-Gray-9 ml-10 mt-[50px] text-center">
+                Subscribe to Our <span className="ml-10">Newsletter</span>
+              </h1>
+              <p className="text-Body-Medium font-400 text-Gray-4 ml-10 text-center mt-[10px]">
+                Subscribe to our newsletter and Save your <span className="font-600 text-Warning">20% money</span> with discount code today.
+              </p>
+              <div className="flex items-center mt-[24.5px]">
+                <input
+                  type="text"
+                  placeholder="Enter your email"
+                  className="w-[343px] h-[49px] ml-[40px] border-2 rounded-l-[46px] p-5"
+                />
+                <button className="w-[147px] h-[49px] bg-primary text-Body-Small font-600 text-white ml-[-20px] rounded-[46px]">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
-      {/*  for popup */}
-      <div className='w-[872px] h-[400px]   rounded-[8px] flex mt-96 relative'>
-        <div>
-          <Image src={popupImage} alt='popupImage' className='w-[354px] h-[380px] rounded-[4px] mt-[10px] ml-[10px]' />
-        </div>
-       <div className=' right-4 top-[8px] text-3xl absolute'>
-       <Image  src={closeIcon}/>
-       </div>
-        <div>
-          <div>
-            <h1 className='text-Heading-03 font-600 text-Gray-9 ml-10 mt-[50px] text-center'>Subcribe to Our <span className='ml-10'>Newsletter</span></h1>
-
-          </div>
-          <div className='w-[428px] h-[48px] mt-[10px]'>
-            <p className='text-Body-Medium font-400 text-Gray-4 ml-10 text-center'>Subscribe to our newlletter and Save your <span className='font-600 text-Warning'>20%  money</span> with discount code today.</p>
-          </div>
-          <div className='flex items-center mt-[24.5px]'>
-           <input type="text" placeholder='Enter your email' className='w-[343px] h-[49px] ml-[40px] border-2 rounded-l-[46px] p-5' />
-            <button className='w-[147px] h-[49px] bg-primary text-Body-Small font-600 text-white ml-[-20px] rounded-[46px]'>Subscribe</button>
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
   );
 };

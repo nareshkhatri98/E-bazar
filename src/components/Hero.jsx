@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Image from "next/image";
+import Link from 'next/link';
 import {
   ArrowDownIcon,
   CartIcon,
@@ -10,6 +11,7 @@ import {
   SearchIcon,
 } from "@/assets/icons";
 const Hero = () => {
+ 
   return (
     <div>
           {/* Header section */}
@@ -34,9 +36,10 @@ const Hero = () => {
                 </div>
               </div>
               <div className="ml-5 cursor-pointer ">
-                <span className=' text-Body-Tiny font-400'>Sign In</span>
+             
+               <Link href="/login"> <span className=' text-Body-Tiny font-400'>Sign In</span> </Link>
                 <span className="mx-1  text-Body-Tiny font-400">/</span>
-                <span className='text-Body-Tiny font-400'>Sign Up</span>
+             <Link href="/register">   <span className='text-Body-Tiny font-400'>Sign Up</span> </Link>
               </div>
             </div>
           </div>
