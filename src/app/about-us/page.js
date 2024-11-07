@@ -25,6 +25,7 @@ import {
 import { rightArrow } from "@/assets/images";
 import ClientTestimonial from "@/components/ClientTestimonial";
 import TestMonial from "./TestMonial";
+import Footer from "@/components/Footer";
 
 const Page = () => {
   return (
@@ -248,6 +249,7 @@ const Page = () => {
         </div>
       </div>
     <TestMonial />
+    <Footer />
       
     </>
   );
