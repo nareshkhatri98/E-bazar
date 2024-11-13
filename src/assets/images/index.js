@@ -10,5 +10,8 @@ import VectorIcon from './Vector.svg'
 import leftIcon from './leftArrow.svg'
 import popupImage from './PopupImg.svg'
 import closeIcon from './crossIcon.svg'
+import PlayIcon from './PlayIcon.svg'
+import About9Icon from './About9.svg'
+import Icon from './ICon.svg'
 
-export { Logo,popupImage, rightArrow, closeIcon, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };
+export { Logo, PlayIcon, About9Icon, Icon, popupImage, rightArrow, closeIcon, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };

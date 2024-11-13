@@ -15,8 +15,12 @@ import MethodApplePayIcon from './Method=ApplePay.svg'
 import MethodMasterCardIcon from './Method=Mastercard.svg'
 import MethodVisaIcon from './Method=Visa.svg'
 import MethodDiscoverIcon from './Method=Discover.svg'
+import farmaryIcon from './farmary.svg';
+import leaf2DIcon from './2Dleaf.svg'
 import CartICons from './CartIcon.svg'
+import rectangleIcon from './Rectangle.svg';
+import whiteIcon from './WhiteICon.svg'
 
-export { Location, HeartIcon, ArrowDownIcon, CartIcon, SearchIcon, PhoneIcon, EyeIcon,AppleIcon,PlayStoreIcon,TwitterIcon,InstaIcon,FacebookIcon, PinterestIcon, MethodApplePayIcon, MethodDiscoverIcon,MethodMasterCardIcon, MethodVisaIcon, CartICons
+export { Location,whiteIcon, rectangleIcon, HeartIcon, farmaryIcon,leaf2DIcon, ArrowDownIcon, CartIcon, SearchIcon, PhoneIcon, EyeIcon,AppleIcon,PlayStoreIcon,TwitterIcon,InstaIcon,FacebookIcon, PinterestIcon, MethodApplePayIcon, MethodDiscoverIcon,MethodMasterCardIcon, MethodVisaIcon, CartICons
 
  };
