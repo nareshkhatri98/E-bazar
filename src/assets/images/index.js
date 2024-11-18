@@ -13,5 +13,8 @@ import closeIcon from './crossIcon.svg'
 import PlayIcon from './PlayIcon.svg'
 import About9Icon from './About9.svg'
 import Icon from './ICon.svg'
+import EmailIcon from './Email.svg'
+import LocationICon from './Location.svg'
+import TelephoneIcon from './TelephoneIcon.svg'
 
-export { Logo, PlayIcon, About9Icon, Icon, popupImage, rightArrow, closeIcon, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };
+export { Logo,EmailIcon,LocationICon,TelephoneIcon, PlayIcon, About9Icon, Icon, popupImage, rightArrow, closeIcon, SliderIcon, deliveryTruck, headPhonesIcon, packageIcon, shoppingIcon, containerIcon,VectorIcon, leftIcon };
