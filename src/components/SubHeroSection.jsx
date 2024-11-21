@@ -17,11 +17,15 @@ const SubHeroSection = () => {
     <div>
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-0 py-4">
         {/* Logo */}
+        <a href="/">
         <Image
           src={Logo}
           alt="logo"
           className="w-[9rem] h-[2rem] lg:w-[11.4375rem] lg:h-[2.375rem] cursor-pointer mb-4 lg:mb-0"
         />
+
+        </a>
+     
 
         {/* Search Bar */}
         <div className="flex items-center my-4 lg:my-[1.6875rem] w-full lg:w-auto">

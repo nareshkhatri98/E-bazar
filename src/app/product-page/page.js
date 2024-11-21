@@ -8,7 +8,7 @@ import {
   productIcon4,
   ratingIcon1,
 } from "@/assets/shop-page-images";
-import { chaniseCabbageICon } from "@/assets/products";
+import { chaniseCabbageICon, GreenAppleIcon } from "@/assets/products";
 import Star from "@/components/Start";
 import { leafIcon, starsIcon } from "@/assets/about-images";
 import { tickIcon } from "@/assets/about-images";
@@ -302,7 +302,10 @@ const page = () => (
       <div className="w-[1320px] h-[477px] bg-green-300 ">
         <h1 className="text-Heading-05 font-600 text-Gray-9 text-center">Related Products</h1>
         <div className="w-[332px] h-[407px] bg-red-200">
-
+        <Image  src={GreenAppleIcon} alt="green apple"/>
+        <p>Green Apple</p>
+        <p>$14.99 <span>$20.99</span></p>
+      
         </div>
         
 
