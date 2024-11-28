@@ -14,7 +14,7 @@ import OfferIcon from "./offerimg.svg";
 import FreshMango from "./FreshMango.svg";
 import RedChilli from "./RedChili.svg";
 
-export { ratingIcon, GreenAppleIcon, OfferIcon, chaniseCabbageICon };
+export { ratingIcon, GreenAppleIcon, OfferIcon, chaniseCabbageICon,RedCapsicumIcon };
 
 export const products = [
   {

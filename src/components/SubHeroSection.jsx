@@ -53,6 +53,7 @@ const SubHeroSection = () => {
 
           {/* Shopping Cart */}
           <div className="ml-4 flex items-center relative">
+            <a href=""></a>
             <Image src={CartIcon} className="w-[1.75rem] h-[1.75rem] lg:w-[2.125rem] lg:h-[2.125rem] cursor-pointer" alt='CartIcon' />
             <div className="absolute top-[-5px] left-3 cursor-pointer">
               <span className="bg-[#2C742F] text-white w-[20px] h-[20px] lg:w-[25px] lg:h-[25px] flex items-center justify-center rounded-full cursor-pointer text-xs lg:text-sm">
