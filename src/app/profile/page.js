@@ -52,31 +52,31 @@ const page = () => {
                 Dashboard
               </span>
             </div>
-            <div className=" flex gap-[10px] ml-5 w-[312px] h-[56px] items-center">
+            <div className=" flex gap-[10px] ml-5 w-[312px] h-[56px] items-center  cursor-pointer">
               <Image src={RefreshIcon} alt=" RefreshIcon" />
               <span className="text-Body-Medium font-400 text-Gray-6">
                 Order History
               </span>
             </div>
-            <div className=" flex gap-[10px]  ml-5 w-[312px] h-[56px] items-center">
+            <div className=" flex gap-[10px]  ml-5 w-[312px] h-[56px] items-center  cursor-pointer">
               <Image src={WishListIcon} alt="" />
               <span className="text-Body-Medium font-400 text-Gray-6">
                 Wishlist
               </span>
             </div>
-            <div className=" flex gap-[10px] ml-5 w-[312px] h-[56px] items-center">
+            <div className=" flex gap-[10px] ml-5 w-[312px] h-[56px] items-center  cursor-pointer">
               <Image src={CartDashboardIcon} alt=" dashboard" />
               <span className="text-Body-Medium font-400 text-Gray-6">
                 Shopping Cart
               </span>
             </div>
-            <div className=" flex gap-[10px]  ml-5 w-[312px] h-[56px] items-center">
+            <div className=" flex gap-[10px]  ml-5 w-[312px] h-[56px] items-center  cursor-pointer">
               <Image src={settingIcon} alt=" dashboard" />
               <span className="text-Body-Medium font-400 text-Gray-6">
                 Settings
               </span>
             </div>
-            <div className=" flex gap-[10px] ml-5 w-[312px] h-[56px] items-center">
+            <div className=" flex gap-[10px] ml-5 w-[312px] h-[56px] items-center  cursor-pointer">
               <Image src={LogoutIcon} alt=" dashboard" />
               <span className="text-Body-Medium font-400 text-Gray-6">
                 Log-out
