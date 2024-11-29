@@ -20,7 +20,14 @@ import leaf2DIcon from './2Dleaf.svg'
 import CartICons from './CartIcon.svg'
 import rectangleIcon from './Rectangle.svg';
 import whiteIcon from './WhiteICon.svg'
+import RefreshIcon from './Refresh.svg'
+import settingIcon from './settings.svg'
+import DashboardIcon from './dashboard.svg'
+import LogoutIcon from './Logout.svg'
+import CartDashboardIcon from './CartDashboard.svg'
+import WishListIcon from './WishList.svg'
+import Avatar from './Avatar.svg'
 
-export { Location,whiteIcon, rectangleIcon, HeartIcon, farmaryIcon,leaf2DIcon, ArrowDownIcon, CartIcon, SearchIcon, PhoneIcon, EyeIcon,AppleIcon,PlayStoreIcon,TwitterIcon,InstaIcon,FacebookIcon, PinterestIcon, MethodApplePayIcon, MethodDiscoverIcon,MethodMasterCardIcon, MethodVisaIcon, CartICons
+export {RefreshIcon, Avatar, CartDashboardIcon, WishListIcon, settingIcon,LogoutIcon,DashboardIcon, Location,whiteIcon, rectangleIcon, HeartIcon, farmaryIcon,leaf2DIcon, ArrowDownIcon, CartIcon, SearchIcon, PhoneIcon, EyeIcon,AppleIcon,PlayStoreIcon,TwitterIcon,InstaIcon,FacebookIcon, PinterestIcon, MethodApplePayIcon, MethodDiscoverIcon,MethodMasterCardIcon, MethodVisaIcon, CartICons
 
  };
