@@ -1,55 +1,50 @@
 import React from 'react'
-import React from 'react'
-import Image from "next/image";
-import { CellPhone, DownArrow } from '@/assets/icons';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowDownIcon, PhoneIcon } from '@/assets/icons';
+import { motion } from 'framer-motion';
 
+const menuItem = [
+  { name: 'Home', href: '/', hasDropDown: true },
+  { name: 'Shop', href: '/shop', hasDropDown: true },
+ 
+  { name: 'About Us', href: '/about-us', hasDropDown: false },
+  { name: 'Contact Us', href: '/contact', hasDropDown: false },
+];
 const NavbarBakup = () => {
-    const menuItem = [
-        { name: 'Home', hasDropDown: true },
-        { name: 'Shop', hasDropDown: true },
-        { name: 'Pages', hasDropDown: true },
-        { name: "Blog", hasDropDown: true },
-        { name: 'about Us', hasDropDown: false },
-        { name: 'Contact Us', hasDropDown: false }
-    ];
-
   return (
-    <div>
-           <div>
-            <div className=' bg-[#333333]'>
-                <nav className='flex justify-between container  mx-auto p-4 text-[#999999]'>
-                    {/* left menu */}
-                    <div className='flex items-center'>
-                        <div className='flex space-x-11 '>
-                            {
-                                menuItem.map((item, index) => (
-                                    <div key={item} className='flex items-center'>
-                                        <span className='mr-1'> {item.name}</span>
-                                        {item.hasDropDown && <Image src={DownArrow} alt='DownArrow' />}
-                                    </div>
+    <div className="">
+    <div className="flex text-black items-center justify-between container mx-auto">
+      {/* Left side menu */}
+      <ul className="flex items-center py-[1.1875rem]">
+        {menuItem.map((item, index) => (
+          <li key={index} className="flex items-center mr-8">
+            <Link href={item.href}>
+              {item.name}
+            </Link>
+            {item.hasDropDown && (
+              <Image
+                src={ArrowDownIcon}
+                alt="dropdown-arrow"
+                className="ml-1 h-4 w-4 cursor-pointer"
+              />
+            )}
+          </li>
+        ))}
+      </ul>
 
-                                ))
-                            }
-                        </div>
-                    </div>
-                    {/* right menu */}
-                    <div className='flex items-center'>
-                        <Image src={CellPhone} alt='CellPhone' className=' cursor-pointer' />
-                        <span>(219) 555-0114</span>
-                    </div>
-
-                </nav>
-
-            </div>
-
-        </div>
+      {/* Right side with phone icon */}
+      <div className="flex items-center">
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <Image src={PhoneIcon} alt="phone-icon" className="h-8 w-8 cursor-pointer" />
+        </motion.div>
+        <span className="ml-2 text-[0.875rem] font-medium">
+          (219) 555-0114
+        </span>
+      </div>
     </div>
+  </div>
   )
 }
 
 export default NavbarBakup
-
-
-
-
-  

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { HomeIcon } from "@/assets/shop-page-images";
@@ -6,12 +7,21 @@ import { GreenAppleIcon, RedCapsicumIcon } from "@/assets/products";
 import { closeIcon } from "@/assets/images";
 import { RedCapsicum1 } from "@/assets/social/social";
 import Footer from "@/components/Footer";
+import { bannerIcon } from "@/assets/Banner";
+import NavbarBakup from "@/components/NavbarBakup";
 
 const page = () => {
   return (
+    
     <div>
+      <hr />
+      <NavbarBakup/>
+      <div className="relative w-full h-[120px] ">
+        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
+      </div>
+    
       <div className="container mx-auto">
-        <div className=" flex gap-3 mt-6 ">
+      <div className=" absolute top-64 flex gap-3 mt-[48px]  ">
           <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
           <Image
             src={ArrowDownIcon}
@@ -22,6 +32,7 @@ const page = () => {
             Shopping cart
           </span>
         </div>
+        
 
         <h1 className="text-Heading-05 font-600 text-Gray-9 text-center mt-[40px]">
           My Shopping Cart

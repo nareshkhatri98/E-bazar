@@ -18,11 +18,9 @@ export default function Home() {
     <>
       <main>
         <header>
-          {/* hero section */}
-          {/* <Hero /> */}
-{/* 
-          navbar
-          <Navbar /> */}
+       
+         
+          <Navbar /> 
         </header>
         {/* Image slider */}
         <ImageSlider />

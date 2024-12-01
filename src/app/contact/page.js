@@ -1,22 +1,31 @@
+"use client"
 import Footer from "@/components/Footer";
 import React from "react";
 import Image from "next/image";
 import { HomeIcon } from "@/assets/shop-page-images";
 import { ArrowDownIcon } from "@/assets/icons";
 import { EmailIcon, LocationICon, TelephoneIcon } from "@/assets/images";
+import Navbar from "@/components/Navbar";
+import NavbarBakup from "@/components/NavbarBakup";
+import { bannerIcon, MapIcon } from "@/assets/Banner";
 
 const page = () => {
   return (
     <>
+    <hr />
+   <NavbarBakup/>
+   <div className="relative w-full h-[120px] ">
+        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
+      </div>
       <div className="container mx-auto">
-        <div className=" flex gap-3 mt-6">
+        <div className="absolute top-64 flex gap-3 mt-[48px]">
           <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
           <Image
             src={ArrowDownIcon}
             alt="arrow down"
             className="-rotate-90 cursor-pointer"
           />
-          <span className="text-Body-Medium font-400 text-Gray-6 cursor-pointer">
+          <span className="text-Body-Medium font-400 text-primary cursor-pointer ">
             Contact
           </span>
         </div>
@@ -92,8 +101,9 @@ const page = () => {
           </div>
         </div>
       </div>
-
-      <Footer />
+      <Image src={MapIcon} alt="MapIcon" className="w-full h-full mt-[80px]"/>
+      <Footer  />
+     
     </>
   );
 };

@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
       <body className={`antialiased`}>
      <Hero />
      <SubHeroSection />
-     <Navbar />
+     
 
         {children}
       </body>

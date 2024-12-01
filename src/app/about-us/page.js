@@ -26,11 +26,32 @@ import { rightArrow } from "@/assets/images";
 import ClientTestimonial from "@/components/ClientTestimonial";
 import TestMonial from "./TestMonial";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { bannerIcon } from "@/assets/Banner";
+import NavbarBakup from "@/components/NavbarBakup";
+import { HomeIcon } from "@/assets/shop-page-images";
+import { ArrowDownIcon } from "@/assets/icons";
 
 const Page = () => {
   return (
     <>
+    <hr />
+    <NavbarBakup />
+    <div className="relative w-full h-[120px] ">
+        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
+      </div>
       <div className="w-[1364px] h-[492px] container mx-auto flex mt-[80px]">
+      <div className="absolute top-64 flex gap-3 mt-[48px]">
+          <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
+          <Image
+            src={ArrowDownIcon}
+            alt="arrow down"
+            className="-rotate-90 cursor-pointer"
+          />
+          <span className="text-Body-Medium font-400 text-primary cursor-pointer ">
+            About
+          </span>
+        </div>
         <div className=" w-[50%] h-[100%]">
           <h1 className="text-Heading-01 font-600 mt-[96px] text-gray-900">
             100% Trusted <br />
