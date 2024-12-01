@@ -90,9 +90,10 @@ const page = () => {
               Account Settings
             </h1>
             <hr />
-
+  
             <div className=" flex  items-center gap-[112px]">
               {/* for form */}
+              <form action="#">
               <div className="w-[512px] h-[352px]">
                 <div className="m-6">
                   <label htmlFor="First name">First name</label>
@@ -131,7 +132,7 @@ const page = () => {
                   Save Changes
                 </button>
               </div>
-
+              </form>
               {/* for image section */}
               <div>
                 <Image src={Avatar} alt="avatar" />
@@ -148,6 +149,9 @@ const page = () => {
         </div>
     
         <div className="w-[984px] h-[533px] border-[1px] mt-6 ml-[340px] ">
+          <form action="#">
+
+          
             <h1 className="text-Body-XL font-500 p-5">Billing Address</h1>
             <hr />
             <div className="mt-[20px] flex gap-4 ml-6">
@@ -232,10 +236,13 @@ const page = () => {
           </div>
           </div>
           <button className="m-6 w-[167px] h-[45px] rounded-[43px] bg-primary text-white text-Body-Small font-600 ">Save Changes</button>
-       
+          </form>
         </div>
         {/* for change password..... */}
         <div className="w-[984px] h-[349px] border-[1px] mt-6 ml-[340px] "> 
+          <form action="#">
+
+       
             <h1 className="text-Body-XL font-500 text-Gray-9 p-4">Change Password</h1>
             <hr />
             <div className="m-6 relative">
@@ -254,7 +261,7 @@ const page = () => {
                 </div>
             </div>
             <button className="m-6 w-[194px] h-[45px] rounded-[43px] bg-primary text-white text-Body-Small font-600 ">Change Password</button>
-           
+            </form>
 
         </div>
 

@@ -178,38 +178,41 @@ const page = () => {
               <p className="">Total:</p>
               <p className="ml-[269px]">$84.00</p>
             </div>
-            
-            {/* for payment method */}
-            <div className="m-6">
-              <h1>Payment Method</h1>
-              <div className="flex items-center gap-[6px] mt-4">
-                <input
-                  type="radio"
-                  name="payment"
-                  className="appearance-none w-[20px] h-[20px] rounded-full border-[1px] border-green-500 checked:bg-green-500"
-                />
-                <span>Cash on Delivery</span>
-              </div>
-              <div className="flex items-center gap-[6px] mt-[10px]">
-                <input
-                  type="radio"
-                  name="payment"
-                  className="appearance-none w-[20px] h-[20px] rounded-full border-[1px] border-green-500 checked:bg-green-500"
-                />
-                <span>Paypal</span>
-              </div>
-              <div className="flex items-center gap-[6px] mt-[10px]">
-                <input
-                  type="radio"
-                  name="payment"
-                  className="appearance-none w-[20px] h-[20px] rounded-full border-[1px] border-green-500 checked:bg-green-500"
-                />
-                <span>Amazon Pay</span>
-              </div>
-            </div>
-          
 
-            <button className=" w-[376px] h-[51px] bg-primary text-white rounded-[43px] ml-6 ">Place Order</button>
+            {/* for payment method */}
+            <form action="#">
+              <div className="m-6">
+                <h1>Payment Method</h1>
+
+                <div className="flex items-center gap-[6px] mt-4">
+                  <input
+                    type="radio"
+                    name="payment"
+                    className="appearance-none w-[20px] h-[20px] rounded-full border-[1px] border-green-500 checked:bg-green-500"
+                  />
+                  <span>Cash on Delivery</span>
+                </div>
+                <div className="flex items-center gap-[6px] mt-[10px]">
+                  <input
+                    type="radio"
+                    name="payment"
+                    className="appearance-none w-[20px] h-[20px] rounded-full border-[1px] border-green-500 checked:bg-green-500"
+                  />
+                  <span>Paypal</span>
+                </div>
+                <div className="flex items-center gap-[6px] mt-[10px]">
+                  <input
+                    type="radio"
+                    name="payment"
+                    className="appearance-none w-[20px] h-[20px] rounded-full border-[1px] border-green-500 checked:bg-green-500"
+                  />
+                  <span>Amazon Pay</span>
+                </div>
+              </div>
+              <button className=" w-[376px] h-[51px] bg-primary text-white rounded-[43px] ml-6 ">
+                Place Order
+              </button>
+            </form>
           </div>
         </div>
       </div>

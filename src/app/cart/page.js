@@ -159,9 +159,10 @@ const page = () => {
           
           </div>
           <div className="w-[872px] h-[92px] p-5 rounded-[8px] border-[#E6E6E6]  border-[1px] mt-[24px]">
-            <div className="flex items-center">
+           <form action="#">
+           <div className="flex items-center">
               <h1 className="text-Body-XL font-500 text-Gray-9">Coupon Code</h1>
-              <input
+                <input
                 type="text"
                 placeholder="Enter code"
                 className="w-[531px] h-[52px] border-[1px] rounded-[46px] ml-[24px] p-5"
@@ -170,6 +171,8 @@ const page = () => {
                 Apply Coupon
               </button>
             </div>
+
+           </form>
           </div> 
 
          </div>

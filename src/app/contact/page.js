@@ -62,15 +62,34 @@ const page = () => {
                 your project and you need my help? Feel free to contact me.
               </p>
             </div>
-            <div className="mt-6">
-            <input type="text"  className="ml-[50px] w-[434px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border" placeholder="Template Cookie"/>
-            <input type="text"  className="ml-4 w-[434px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border" placeholder="zakirsoft@gmail.com"/>
-            </div>
-            <input type="text"  className="ml-[50px] w-[884px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4" placeholder="Hello|"/>
-            <textarea type="text"  className="ml-[50px] w-[884px] h-[98px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4" placeholder="subjects"/>
-          <button className="ml-[50px] mt-[24px] w-[199px] h-[51px] bg-primary rounded-[43px] text-Body-Medium font-600 text-Gray-0.5" >Send Message</button>
+            <form action="#">
+              <div className="mt-6">
+                <input
+                  type="text"
+                  className="ml-[50px] w-[434px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border"
+                  placeholder="Template Cookie"
+                />
+                <input
+                  type="text"
+                  className="ml-4 w-[434px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border"
+                  placeholder="zakirsoft@gmail.com"
+                />
+              </div>
+              <input
+                type="text"
+                className="ml-[50px] w-[884px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4"
+                placeholder="Hello|"
+              />
+              <textarea
+                type="text"
+                className="ml-[50px] w-[884px] h-[98px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4"
+                placeholder="subjects"
+              />
+              <button className="ml-[50px] mt-[24px] w-[199px] h-[51px] bg-primary rounded-[43px] text-Body-Medium font-600 text-Gray-0.5">
+                Send Message
+              </button>
+            </form>
           </div>
-
         </div>
       </div>
 

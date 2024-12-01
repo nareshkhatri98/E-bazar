@@ -34,6 +34,7 @@ const page = () => {
           <h1 className="text-center text-Heading-05 font-600 text-Gray-9 p-[24px]">
             Sign In
           </h1>
+          <form action="#">
           <div className="ml-[24px] ">
             <input
               className="w-[472px]  p-5 border border-[#E6E6E6] rounded-[6px] h-[49px]"
@@ -72,6 +73,7 @@ const page = () => {
               <a href="register">Register</a>
             </span>
           </p>
+          </form>
         </div>
       </div>
       <Footer />
