@@ -31,14 +31,20 @@ import { bannerIcon } from "@/assets/Banner";
 import NavbarBakup from "@/components/NavbarBakup";
 import { HomeIcon } from "@/assets/shop-page-images";
 import { ArrowDownIcon } from "@/assets/icons";
+import { useDispatch, useSelector } from "react-redux";
 
 const Page = () => {
+
+  const dispatch = useDispatch();
+
+  const counterValue = useSelector((state) => state.counter.number);
+
   return (
     <>
     <hr />
     <NavbarBakup />
     <div className="relative w-full h-[120px] ">
-        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
+        <Image src={bannerIcon} alt="banner" className="object-cover w-full h-full rotate-180"/>
       </div>
       <div className="w-[1364px] h-[492px] container mx-auto flex mt-[80px]">
       <div className="absolute top-64 flex gap-3 mt-[48px]">
@@ -48,7 +54,7 @@ const Page = () => {
             alt="arrow down"
             className="-rotate-90 cursor-pointer"
           />
-          <span className="text-Body-Medium font-400 text-primary cursor-pointer ">
+          <span className="cursor-pointer text-Body-Medium font-400 text-primary ">
             About
           </span>
         </div>
@@ -83,7 +89,7 @@ const Page = () => {
             <h1 className="text-Heading-01 text-Gray-9 font-600 mt-[80px]">
               100% Trusted Organic Food Store
             </h1>
-            <p className="text-Body-Medium font-400 text-Gray-6 mt-5">
+            <p className="mt-5 text-Body-Medium font-400 text-Gray-6">
               Pellentesque a ante vulputate leo porttitor luctus sed eget eros.
               Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a
               a mi. Nulla eu eros consequat tortor tincidunt feugiat.{" "}
@@ -93,7 +99,7 @@ const Page = () => {
           {/* for services */}
           <div className="flex items-center gap-[24px]">
             <div>
-              <div className="mt-28 flex">
+              <div className="flex mt-28">
                 <div className="bg-[#00B2071A] rounded-full h-[72px] w-[72px] flex items-center ">
                   <Image src={leafIcon} alt="leaf" className="ml-3" />
                 </div>
@@ -106,7 +112,7 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-8 flex">
+              <div className="flex mt-8">
                 <div className="bg-[#00B2071A] rounded-full h-[72px] w-[72px] flex items-center ">
                   <Image src={starsIcon} alt="leaf" className="ml-3" />
                 </div>
@@ -119,7 +125,7 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-8 flex">
+              <div className="flex mt-8">
                 <div className="bg-[#00B2071A] rounded-full h-[72px] w-[72px] flex items-center ">
                   <Image src={deliveryTruck} alt="leaf" className="ml-3" />
                 </div>
@@ -135,7 +141,7 @@ const Page = () => {
             </div>
 
             <div>
-              <div className="mt-28 flex">
+              <div className="flex mt-28">
                 <div className="bg-[#00B2071A] rounded-full h-[72px] w-[72px] flex items-center ">
                   <Image src={headPhonesIcon} alt="leaf" className="ml-3" />
                 </div>
@@ -148,7 +154,7 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-8 flex">
+              <div className="flex mt-8">
                 <div className="bg-[#00B2071A] rounded-full h-[72px] w-[72px] flex items-center ">
                   <Image src={shoppingIcon} alt="leaf" className="ml-3" />
                 </div>
@@ -161,7 +167,7 @@ const Page = () => {
                   </p>
                 </div>
               </div>
-              <div className="mt-8 flex">
+              <div className="flex mt-8">
                 <div className="bg-[#00B2071A] rounded-full h-[72px] w-[72px] flex items-center ">
                   <Image src={packageIcon} alt="leaf" className="ml-3" />
                 </div>
@@ -193,7 +199,7 @@ const Page = () => {
             nunc eget elementum.
           </p>
           {/* for bottom part */}
-          <div className="mt-5 flex gap-2 ">
+          <div className="flex gap-2 mt-5 ">
             <div className="w-[20px] h-[20px] rounded-full bg-[#00B2071A] flex items-center">
               <Image src={tickIcon} alt=" tick" className="ml-1" />
             </div>
@@ -201,7 +207,7 @@ const Page = () => {
               Sed in metus pellentesque.
             </h1>
           </div>
-          <div className="mt-4 flex gap-2 ">
+          <div className="flex gap-2 mt-4 ">
             <div className="w-[20px] h-[20px] rounded-full bg-[#00B2071A] flex items-center">
               <Image src={tickIcon} alt=" tick" className="ml-1" />
             </div>
@@ -209,7 +215,7 @@ const Page = () => {
               Fusce et ex commodo, aliquam nulla efficitur, tempus lorem.
             </h1>
           </div>
-          <div className="mt-4 flex gap-2 ">
+          <div className="flex gap-2 mt-4 ">
             <div className="w-[20px] h-[20px] rounded-full bg-[#00B2071A] flex items-center">
               <Image src={tickIcon} alt=" tick" className="ml-1" />
             </div>
@@ -233,18 +239,18 @@ const Page = () => {
 
         <div>
           <div className="w-[640px] h-[150px] ml-[640px] py-[80px]">
-            <h1 className="text-Heading-02 text-Gray-9 font-600  text-center ">
+            <h1 className="text-center text-Heading-02 text-Gray-9 font-600 ">
               Our Awesome Team
             </h1>
 
-            <p className="text-Body-Medium font-400 text-Gray-6 text-center ">
+            <p className="text-center text-Body-Medium font-400 text-Gray-6 ">
               Pellentesque a ante vulputate leo porttitor luctus sed eget eros.
               Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a
               a mi.
             </p>
           </div>
           {/*  for cards */}
-        <div className="flex items-center gap-6 mt-20 container mx-auto mr-16">
+        <div className="container flex items-center gap-6 mx-auto mt-20 mr-16">
         <div className="w-[312px] h-[368px] bg-[#FFFF] rounded-[20px]">
             <Image src={aboutIcon4}/>
             <h1>Jenny Wilson</h1>

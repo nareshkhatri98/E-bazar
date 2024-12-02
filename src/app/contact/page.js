@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Footer from "@/components/Footer";
 import React from "react";
 import Image from "next/image";
@@ -8,16 +8,51 @@ import { EmailIcon, LocationICon, TelephoneIcon } from "@/assets/images";
 import Navbar from "@/components/Navbar";
 import NavbarBakup from "@/components/NavbarBakup";
 import { bannerIcon, MapIcon } from "@/assets/Banner";
+import Button from "@/components/Button";
+
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "@/redux/slice/counterSlice";
 
 const page = () => {
+  // const count = useSelector((state) => state.counter.value)
+
+  const dispatch = useDispatch();
+
+  const counterValue = useSelector((state) => state.counter.number);
+
+  console.log(counterValue);
+
   return (
     <>
-    <hr />
-   <NavbarBakup/>
-   <div className="relative w-full h-[120px] ">
-        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
+      <hr />
+      <NavbarBakup />
+      <div className="relative w-full h-[120px] ">
+        <Image
+          src={bannerIcon}
+          alt="banner"
+          className="object-cover w-full h-full rotate-180"
+        />
       </div>
+
       <div className="container mx-auto">
+        <div>
+          <h1 className="text-display-01 font-600">Counter - {counterValue}</h1>
+
+          <Button
+            onClick={() => {
+              dispatch(increment());
+            }}
+          >
+            Inc
+          </Button>
+          <Button
+            onClick={() => {
+              dispatch(decrement());
+            }}
+          >
+            Dec
+          </Button>
+        </div>
         <div className="absolute top-64 flex gap-3 mt-[48px]">
           <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
           <Image
@@ -25,7 +60,7 @@ const page = () => {
             alt="arrow down"
             className="-rotate-90 cursor-pointer"
           />
-          <span className="text-Body-Medium font-400 text-primary cursor-pointer ">
+          <span className="cursor-pointer text-Body-Medium font-400 text-primary ">
             Contact
           </span>
         </div>
@@ -101,9 +136,9 @@ const page = () => {
           </div>
         </div>
       </div>
-      <Image src={MapIcon} alt="MapIcon" className="w-full h-full mt-[80px]"/>
-      <Footer  />
-     
+
+      <Image src={MapIcon} alt="MapIcon" className="w-full h-full mt-[80px]" />
+      <Footer />
     </>
   );
 };
