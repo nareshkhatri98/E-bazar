@@ -12,6 +12,7 @@ import NewProduct from "@/components/NewProduct";
 import ClientTestimonial from "@/components/ClientTestimonial";
 import SocialMedia from "@/components/SocialMedia";
 import Footer from "@/components/Footer";
+import FeatureProductManual from "@/components/FeatureProductManual";
 
 export default function Home() {
   return (
@@ -28,7 +29,8 @@ export default function Home() {
         {/* services section */}
         <Service />
         {/* Features section */}
-        <FeatureProduct />
+        {/* <FeatureProduct /> */}
+        <FeatureProductManual />
         {/* Top Category */}
         <TopCategory />
        <SaleCategory />
