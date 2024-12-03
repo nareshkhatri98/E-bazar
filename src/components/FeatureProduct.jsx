@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 import Image from "next/image";
 import { GreenAppleIcon, products, ratingIcon } from "@/assets/products";
 import { CartIcon, EyeIcon, HeartIcon } from "@/assets/icons";
 import { motion } from "framer-motion";
-import SellerSection from './SellerSection';
-import Start from './Start';
+import SellerSection from "./SellerSection";
+import Start from "./Start";
+import { useGetProductsQuery } from "@/redux/api/productsApi";
 
 const FeatureProduct = () => {
+  const { data } = useGetProductsQuery();
+
+
   return (
     <div>
       <section className="mt-[11.25rem]">
@@ -19,13 +23,22 @@ const FeatureProduct = () => {
           <div className="w-[12px] h-[4px] opacity-[30%] bg-green-700"></div>
         </div>
         {/* cart section */}
-        {/* <div className="container mx-auto relative cursor-pointer w-full px-4 lg:px-0"> */}
+        {/* <div className="container relative w-full px-4 mx-auto cursor-pointer lg:px-0"> */}
         <div>
-          <div className=' container mx-auto mt-10'>
-            <div className="grid grid-cols-5  px-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-              {products.map((product, index) => (
-                <div key={index} className="w-full sm:w-[200px] md:w-[248px] border relative group">
-                  <Image src={product.image} alt={product.title} className="w-full h-auto" />
+          <div className="container mx-auto mt-10 ">
+            <div className="grid grid-cols-5 px-24 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+              {data?.products?.map((product, index) => (
+                <div
+                  key={index}
+                  className="w-full sm:w-[200px] md:w-[248px] border relative group"
+                >
+                  <Image
+                    src={product.thumbnail?.imgurUrl}
+                    alt={product.name}
+                    width={200}
+                    height={200}
+                    className="h-[15.5rem] w-[15.5rem] object-cover"
+                  />
                   <div className="mt-3 ml-4">
                     <p className="font-normal font-[Poppins] text-[0.875rem] leading-[1.3125rem]">
                       {product.title}
@@ -33,7 +46,7 @@ const FeatureProduct = () => {
                     <p className="text-[1rem] font-medium text-[#1A1A1A] leading-[1.5rem]">
                       {product.price}
                     </p>
-                    <div className='mb-4'>
+                    <div className="mb-4">
                       <Start star={product.rating} />
                     </div>
                   </div>

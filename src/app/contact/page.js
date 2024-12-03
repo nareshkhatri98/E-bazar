@@ -1,26 +1,15 @@
 "use client";
-import Footer from "@/components/Footer";
-import React from "react";
-import Image from "next/image";
-import { HomeIcon } from "@/assets/shop-page-images";
+import { bannerIcon, MapIcon } from "@/assets/Banner";
 import { ArrowDownIcon } from "@/assets/icons";
 import { EmailIcon, LocationICon, TelephoneIcon } from "@/assets/images";
-import Navbar from "@/components/Navbar";
+import { HomeIcon } from "@/assets/shop-page-images";
+import Footer from "@/components/Footer";
 import NavbarBakup from "@/components/NavbarBakup";
-import { bannerIcon, MapIcon } from "@/assets/Banner";
-import Button from "@/components/Button";
+import Image from "next/image";
 
-import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "@/redux/slice/counterSlice";
 
 const page = () => {
-  // const count = useSelector((state) => state.counter.value)
 
-  const dispatch = useDispatch();
-
-  const counterValue = useSelector((state) => state.counter.number);
-
-  console.log(counterValue);
 
   return (
     <>
@@ -35,24 +24,6 @@ const page = () => {
       </div>
 
       <div className="container mx-auto">
-        <div>
-          <h1 className="text-display-01 font-600">Counter - {counterValue}</h1>
-
-          <Button
-            onClick={() => {
-              dispatch(increment());
-            }}
-          >
-            Inc
-          </Button>
-          <Button
-            onClick={() => {
-              dispatch(decrement());
-            }}
-          >
-            Dec
-          </Button>
-        </div>
         <div className="absolute top-64 flex gap-3 mt-[48px]">
           <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
           <Image
