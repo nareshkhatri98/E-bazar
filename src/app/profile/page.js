@@ -42,7 +42,7 @@ const page = () => {
             className="-rotate-90 cursor-pointer"
           />
           <span className="text-primary text-Body-Medium font-400 cursor-pointer">
-            Register
+            Settings
           </span>
         </div>
 

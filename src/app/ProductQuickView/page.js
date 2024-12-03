@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { ArrowDownIcon } from "@/assets/icons";
@@ -19,10 +20,12 @@ import {
 } from "@/assets/icons";
 import { chaniseCabbageICon } from "@/assets/products";
 import { closeIcon } from "@/assets/images";
+import Navbar from "@/components/Navbar";
 
 const page = () => {
   return (
     <>
+    <Navbar/>
      
       <div className="container mx-auto mt-12 relative">
         <div className="w-[1320px] h-[636px] border-[1px]">
