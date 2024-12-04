@@ -14,7 +14,7 @@ const FeatureProductManual = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://10.10.1.95:8000/api/products")
+      const res = await fetch("http://localhost:8000/api/products")
 
       const resJson = await res.json()
 
