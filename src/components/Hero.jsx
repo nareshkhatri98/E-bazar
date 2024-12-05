@@ -17,7 +17,7 @@ const Hero = () => {
           {/* Header section */}
           <div className="py-3 border-b-2 border-Gray-1">
           <div className="flex justify-between container mx-auto">
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <Image src={Location} alt="Location" className='cursor-pointer' />
               <span className="ml-2 text-Body-Tiny font-400">
                 Store Location: Lincoln- 344, Illinois, Chicago, USA
