@@ -2,6 +2,7 @@
 import { bannerIcon } from "@/assets/Banner";
 import { ArrowDownIcon } from "@/assets/icons";
 import { HomeIcon } from "@/assets/shop-page-images";
+import Button from "@/components/Button";
 import Footer from "@/components/Footer";
 import Input from "@/components/Input";
 import NavbarBakup from "@/components/NavbarBakup";
@@ -10,6 +11,9 @@ import { useFormik } from "formik";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { object, string } from "yup";
+import swal from "sweetalert";
+import { setAuthenticated, setUserData } from "@/redux/slice/authSlice";
+import { useDispatch } from "react-redux";
 
 const validation = object({
   firstName: string().required("This is required field"),
@@ -20,8 +24,9 @@ const validation = object({
 });
 
 const Register = () => {
-  const router = useRouter()
-  const [handleRegister] = useSignupMutation();
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const [handleRegister, { isLoading }] = useSignupMutation();
 
   const formik = useFormik({
     initialValues: {
@@ -33,15 +38,17 @@ const Register = () => {
     },
     validationSchema: validation,
     onSubmit: async (values) => {
-      // alert(JSON.stringify(values, null, 2));
-
       try {
         const res = await handleRegister(values);
         console.log(res?.data);
 
         if (res?.data?.token) {
-          router.replace("/login");
-          
+          document.cookie = `authToken=${res.data.token}`;
+
+          localStorage.setItem("userData", JSON.stringify(res?.data?.user));
+          router.replace("/");
+          dispatch(setAuthenticated(true));
+          dispatch(setUserData(res?.data?.user));
         }
       } catch (error) {
         console.log(error);
@@ -148,9 +155,12 @@ const Register = () => {
                   </p>
                 </div>
               </div> */}
-              <button className="w-[472px] h-[45px] ml-[24px] rounded-[32px] mt-5  items-center bg-primary text-white text-Body-Small font-600">
-                Create Account
-              </button>
+              <div className="px-4">
+                <Button variant="primary" isLoading={isLoading}>
+                  Create Account
+                </Button>
+              </div>
+
               <p className="mt-6 text-center text-Body-Small font-400 text-Gray-6">
                 Already have account{" "}
                 <span className="text-Body-Small font-500 text-Gray-9">
