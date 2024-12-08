@@ -14,7 +14,7 @@ const SaleCategory = () => {
                             <h1 className='text-Gray-1 text-[2.57rem]  font[Poppins] font-semibold'>Sale of the Month</h1>
                             <p className='text-Gray-1 mt-6'>Up to <span className='w-[100px] h-[39px] p-3 bg-Gray-1 text-Warning text-[18px] items-center rounded-[5px]'>64% OFF</span></p>
                             <div className='mt-[24px]'>
-                                <Button />
+                            <Button showImage={true}/>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@ const SaleCategory = () => {
                             <p className='text-[1rem] uppercase text-Gray-1 font-medium'>85% Fat Free</p>
                             <h1 className='text-Gray-1 text-[2.857rem]  font[Poppins] font-semibold'>Low-Fat Meat</h1>
                             <p className='text-Gray-1'>Started at <span className='text-Warning'>$79.99</span></p>
-                            <Button />
+                            <Button showImage={true}/>
                         </div>
                     </div>
                     <div className=' w-[424px] h-[536px] relative'>
@@ -34,7 +34,7 @@ const SaleCategory = () => {
                             <h1 className='text-[#1A1A1A] text-[2.857rem]  font[Poppins] font-semibold'>100% Fresh Fruit</h1>
                             <p className='text-[#1A1A1A] mt-6'>Up to <span className='w-[100px] h-[39px] p-3 bg-[#1A1A1A] text-Warning text-[18px] items-center rounded-[5px]'>64% OFF</span></p>
                             <div className='mt-[20px]'>
-                                <Button />
+                            <Button showImage={true}/>
                             </div>
                         </div>
                     </div>

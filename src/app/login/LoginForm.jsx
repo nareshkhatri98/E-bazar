@@ -2,6 +2,7 @@ import InputField from '@/components/InputField'
 import React from 'react'
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
+import Button from '@/components/Button';
 
 
 
@@ -76,9 +77,12 @@ const LoginForm = () => {
             </p>
           </div>
         </div>
-        <button className="w-[472px] h-[45px] ml-[24px] rounded-[32px] mt-5  items-center bg-primary text-white text-Body-Small font-600">
-          Login
-        </button>
+        <Button variant='primary' pageType='auth'>
+        Login
+
+        </Button>
+        {/* <button className="w-[472px] h-[45px] ml-[24px] rounded-[32px] mt-5  items-center bg-primary text-white text-Body-Small font-600">
+        </button> */}
         <p className="text-center text-Body-Small font-400 text-Gray-6 mt-6">
           Don’t have account?
           <span className="text-Body-Small font-500 text-Gray-9">

@@ -4,6 +4,9 @@ import { object, string } from 'yup';
 import InputField from '@/components/InputField';
 import { useRouter } from 'next/navigation';
 import { useSignupMutation } from '@/Redux/api/authApi';
+import Button from '@/components/Button';
+import { setAuthenticated, setUserData } from '@/Redux/slice/authSlice';
+import { useDispatch } from 'react-redux';
 
 
 let validation = object({
@@ -17,7 +20,8 @@ let validation = object({
 
 const RegisterForm = () => {
   const router = useRouter()
-  const [handleRegister] = useSignupMutation();
+  const [handleRegister, {isLoading}] = useSignupMutation();
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -33,7 +37,11 @@ const RegisterForm = () => {
         console.log(res?.data);
 
         if (res?.data?.token) {
-          router.replace("/login");
+          document.cookie = `authToken=${res?.data?.token}`;
+          localStorage.setItem("userData", JSON.stringify(res?.data?.user));
+          router.replace("/");
+          dispatch(setAuthenticated(true));
+          dispatch(setUserData(res?.data?.user));
           
         }
       } catch (error) {
@@ -46,7 +54,10 @@ const RegisterForm = () => {
   return (
     <div>
       <div className="container mx-auto">
-        <div className="w-[520px] h-[550px] bg-white border border-[#F2F2F2] shadow-lg mt-[80px] ml-[33%]">
+        {
+          
+        }
+        <div className="w-[520px] h-[600px] bg-white border border-[#F2F2F2] shadow-lg mt-[80px] ml-[33%]">
           <h1 className="text-center text-Heading-05 font-600 text-Gray-9 p-[24px]">
             Create Account
           </h1>
@@ -105,13 +116,15 @@ const RegisterForm = () => {
               />
              
             </div>
+            <Button pageType='auth' variant='primary' showImage='true' isLoading={isLoading}>
+            Create Account
 
-            <button
+            </Button >
+            {/* <button
               type="submit"
               className="w-[472px] h-[45px] ml-[24px] rounded-[32px] mt-5 items-center bg-primary text-white text-Body-Small font-600"
             >
-              Create Account
-            </button>
+            </button> */}
 
             <p className="text-center text-Body-Small font-400 text-Gray-6 mt-6">
               Already have an account?{' '}

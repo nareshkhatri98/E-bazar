@@ -7,6 +7,7 @@ export const authApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://10.10.1.26:8000/api/" }),
 
   endpoints: (builder) => ({
+    // Signup endpoint
     signup: builder.mutation({
       query: (body) => {
         return {
@@ -17,8 +18,18 @@ export const authApi = createApi({
       },
     }),
 
+    // Login endpoint
+    login: builder.mutation({
+      query: (body) => {
+        return {
+          url: `auth/login/`, // Assuming the login API is at this URL
+          method: "POST",
+          body: body, // Pass the email and password in the body
+        };
+      },
+    }),
   }),
 });
 
-export const { useSignupMutation} = authApi;
-  
+// Export hooks for using the mutations in components
+export const { useSignupMutation, useLoginMutation } = authApi;
