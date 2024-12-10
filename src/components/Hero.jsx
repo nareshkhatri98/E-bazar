@@ -1,5 +1,5 @@
 import { ArrowDownIcon, Location } from "@/assets/icons";
-import { setAuthenticated, setUserData } from "@/redux/slice/authSlice";
+import { setAuthenticated, setUserData } from "@/Redux/slice/authSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";

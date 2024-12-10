@@ -116,7 +116,7 @@ const SellerSection = () => {
                             <p className=' text-[12px] items-center uppercase font-[Poppins] text-[#1A1A1A] font-medium'>Summer Sale</p>
                             <p className='text-[#00B207] text-[2rem] font-bold font-[Poppins] leading-[32.5px] mt-2'>75% off</p>
 
-                            <Button />
+                            <Button showImage={true} />
                         </div>
                     </div>
 
