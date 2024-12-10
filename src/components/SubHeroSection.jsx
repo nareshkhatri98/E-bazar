@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 import {
   CartIcon,
@@ -13,6 +14,7 @@ import {
 } from "@/assets/images";
 
 const SubHeroSection = () => {
+  const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
   return (
     <div>
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-0 py-4">
@@ -53,11 +55,11 @@ const SubHeroSection = () => {
 
           {/* Shopping Cart */}
           <div className="ml-4 flex items-center relative">
-            <a href=""></a>
-            <Image src={CartIcon} className="w-[1.75rem] h-[1.75rem] lg:w-[2.125rem] lg:h-[2.125rem] cursor-pointer" alt='CartIcon' />
+            <a href="/cart">
+            <Image src={CartIcon} className="w-[1.75rem] h-[1.75rem] lg:w-[2.125rem] lg:h-[2.125rem] cursor-pointer" alt='CartIcon' /></a>
             <div className="absolute top-[-5px] left-3 cursor-pointer">
               <span className="bg-[#2C742F] text-white w-[20px] h-[20px] lg:w-[25px] lg:h-[25px] flex items-center justify-center rounded-full cursor-pointer text-xs lg:text-sm">
-                2
+                {cart.length}
               </span>
             </div>
             <div className="ml-3 text-sm lg:text-base">

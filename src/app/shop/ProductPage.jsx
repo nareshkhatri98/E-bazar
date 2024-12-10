@@ -5,14 +5,19 @@ import { CartIcon, EyeIcon, HeartIcon } from '@/assets/icons';
 import { motion } from 'framer-motion';
 import Start from '@/components/Start';
 import { allProudcts } from '@/assets/products';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '@/Redux/slice/cartSlice';
 
 const ProductPage = () => {
+   const items =  useSelector((state)=>state.allCart.cart);
+   const dispatch = useDispatch();
+   console.log(items);
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {allProudcts.map((product, index) => (
+                {allProudcts.map((product) => (
                     <div
-                        key={index}
+                        key={product.id}
                         className="w-full border relative group bg-white rounded-lg overflow-hidden shadow-sm"
                     >
                         {/* Product Image */}
@@ -43,7 +48,7 @@ const ProductPage = () => {
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                         >
-                            <Image src={CartIcon} alt="cart icon" className="w-6 h-6" />
+                            <button onClick={()=>dispatch(addToCart(product))}><Image src={CartIcon} alt="cart icon" className="w-6 h-6" /></button>
                         </motion.div>
                         {/* Hover Icons */}
                         <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center space-y-2">
