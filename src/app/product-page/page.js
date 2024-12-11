@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { About9Icon, BannerIcon, Icon, PlayIcon } from "@/assets/images";
@@ -27,8 +28,12 @@ import {
   whiteIcon,
 } from "@/assets/icons";
 import Footer from "@/components/Footer";
+import { useParams } from "next/navigation";
 
-const page = () => (
+const page = () => {
+ 
+
+ return(
   <>
     <div className="container mx-auto mt-10">
       <div className="w-[1320px] h-[636px] flex bg-[#FFFFFF]  rounded-[8px]">
@@ -298,24 +303,12 @@ const page = () => (
         </div>
        
       </div>
-      <div className="container mx-auto mt-[80px]">
-      <div className="w-[1320px] h-[477px] bg-green-300 ">
-        <h1 className="text-Heading-05 font-600 text-Gray-9 text-center">Related Products</h1>
-        <div className="w-[332px] h-[407px] bg-red-200">
-        <Image  src={GreenAppleIcon} alt="green apple"/>
-        <p>Green Apple</p>
-        <p>$14.99 <span>$20.99</span></p>
-      
-        </div>
-        
-
-      </div>
-
-      </div>
+   
      
     </div>
     <Footer />
   </>
-);
+ )
+}
 
 export default page;

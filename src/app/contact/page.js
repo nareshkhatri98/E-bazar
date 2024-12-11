@@ -8,27 +8,16 @@ import { EmailIcon, LocationICon, TelephoneIcon } from "@/assets/images";
 import Navbar from "@/components/Navbar";
 import NavbarBakup from "@/components/NavbarBakup";
 import { bannerIcon, MapIcon } from "@/assets/Banner";
+import BannerSection from "../Checkout/BannerSection";
 
 const page = () => {
   return (
     <>
     <hr />
    <NavbarBakup/>
-   <div className="relative w-full h-[120px] ">
-        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
-      </div>
+   <BannerSection pageType="contact"/>
       <div className="container mx-auto">
-        <div className="absolute top-64 flex gap-3 mt-[48px]">
-          <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
-          <Image
-            src={ArrowDownIcon}
-            alt="arrow down"
-            className="-rotate-90 cursor-pointer"
-          />
-          <span className="text-Body-Medium font-400 text-primary cursor-pointer ">
-            Contact
-          </span>
-        </div>
+       
         <div className="flex items-center">
           <div className="w-[312px] h-[507px] rounded-[8px]  mt-[80px] shadow-lg  border border-Gray-1">
             <div className="w-[272px] h-[169px]  flex items-center flex-col">

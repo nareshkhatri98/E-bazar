@@ -4,8 +4,9 @@ import React from "react";
 import Image from "next/image";
 
 import NavbarBakup from "@/components/NavbarBakup";
-import BannerSection from "./BannerSection";
+
 import RegisterForm from "./RegisterForm";
+import BannerSection from "../Checkout/BannerSection";
 
 
 const page = () => {
@@ -15,7 +16,7 @@ const page = () => {
       <div>
       <hr />
     <NavbarBakup/>
-    <BannerSection/>
+   <BannerSection pageType="register"/>
     <RegisterForm/>
     <Footer />
      

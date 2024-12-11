@@ -1,3 +1,4 @@
+// components/ImageSlider.js
 import React, { useState, useRef, useEffect } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,6 +9,9 @@ import Image from "next/image";
 import Pagination from './Pagination';
 import { sliderData } from '@/assets/sliderData';
 import { motion } from "framer-motion";
+import { useRouter } from 'next/navigation';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 const ImageSlider = () => {
   const settings = {
@@ -22,15 +26,36 @@ const ImageSlider = () => {
   const [showPopup, setShowPopup] = useState(false);
   const sliderRef = useRef(null);
 
+  // Redux state
+  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);  // Access authentication status
+
+  const router = useRouter();
+
   useEffect(() => {
+    // Simulating a check for an existing user session (e.g., checking localStorage or cookies)
+    const authStatus = localStorage.getItem('isAuthenticated');
+    if (authStatus === 'true') {
+      dispatch(setAuthenticated(true));  // Update Redux state if already authenticated
+    }
+    
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 1000);
+    
     return () => clearTimeout(timer);
-  }, []);
+  }, [dispatch]);
 
   const moveToIndex = (index) => {
     sliderRef.current.slickGoTo(index);
+  };
+
+  const handleRedirect = () => {
+    if (!isAuthenticated) {
+      router.push('/login');  // Redirect to login page if not authenticated
+    } else {
+      router.push('/shop');  // Redirect to shop page if authenticated
+    }
   };
 
   return (
@@ -60,6 +85,7 @@ const ImageSlider = () => {
                     {sliderItem.description}
                   </p>
                   <motion.button
+                    onClick={handleRedirect}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="flex items-center mt-6 lg:mt-8 py-3 lg:py-4 px-6 lg:px-10 bg-primary text-white rounded-[3.3125rem] hover:bg-green-700 transition duration-150 ease-in-out"

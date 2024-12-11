@@ -2,9 +2,12 @@ import { ArrowDownIcon, Location } from "@/assets/icons";
 import { setAuthenticated, setUserData } from "@/Redux/slice/authSlice";
 import Image from "next/image";
 import Link from "next/link";
+
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 const Hero = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
   const authData = useSelector((state) => state.auth);
 
   const { isAuthenticated, userData } = authData;
@@ -14,6 +17,7 @@ const Hero = () => {
     dispatch(setAuthenticated(false));
     dispatch(setUserData({}));
     document.cookie = "authToken=;";
+    router.push('/')
   };
 
   return (

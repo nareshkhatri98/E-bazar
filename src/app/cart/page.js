@@ -11,6 +11,7 @@ import NavbarBakup from "@/components/NavbarBakup";
 import { useSelector } from "react-redux";
 import CartData from "./CartData";
 import Link from "next/link";
+import BannerSection from "../Checkout/BannerSection";
 
 
 const page = () => {
@@ -21,26 +22,10 @@ const page = () => {
     <div>
       <hr />
       <NavbarBakup />
-      <div className="relative w-full h-[120px] ">
-        <Image
-          src={bannerIcon}
-          alt="banner"
-          className="h-full w-full object-cover rotate-180"
-        />
-      </div>
+    <BannerSection pageType="cart" />
 
       <div className="container mx-auto">
-        <div className=" absolute top-64 flex gap-3 mt-[48px]  ">
-          <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
-          <Image
-            src={ArrowDownIcon}
-            alt="arrow down"
-            className="-rotate-90 cursor-pointer"
-          />
-          <span className="text-Body-Medium font-400  cursor-pointer text-primary">
-            Shopping cart
-          </span>
-        </div>
+       
 
         <h1 className="text-Heading-05 font-600 text-Gray-9 text-center mt-[40px]">
           My Shopping Cart

@@ -8,15 +8,16 @@ import { rightArrow } from "@/assets/images";
 import Navbar from "@/components/Navbar";
 import { bannerIcon } from "@/assets/Banner";
 import NavbarBakup from "@/components/NavbarBakup";
-import Herosection from "./Herosection";
+
 import LoginForm from "./LoginForm";
+import BannerSection from "../Checkout/BannerSection";
 
 const page = () => {
   return (
     <div>
       <hr />
       <NavbarBakup/>
-      <Herosection/>
+     <BannerSection pageType="login" />
       <LoginForm/>
      
       

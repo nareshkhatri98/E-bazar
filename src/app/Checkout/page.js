@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import NavbarBakup from "@/components/NavbarBakup";
 import { bannerIcon } from "@/assets/Banner";
 import { useSelector } from "react-redux";
+import BannerSection from "./BannerSection";
 
 const page = () => {
 
@@ -18,30 +19,10 @@ const page = () => {
   return (
     <>
     <hr />
-    <NavbarBakup></NavbarBakup>
-    <div className="relative w-[1920px] h-[120px] ">
-        <Image src={bannerIcon} alt="banner" className="h-full w-full object-cover rotate-180"/>
-      </div>
+    <NavbarBakup/>
+   <BannerSection pageType="checkout"/>
       <div className="container  mx-auto  ">
-        <div className=" absolute top-64 flex gap-3 mt-[48px] ">
-          <Image src={HomeIcon} alt="Home icon" className="cursor-pointer" />
-          <Image
-            src={ArrowDownIcon}
-            alt="arrow down"
-            className="-rotate-90 cursor-pointer"
-          />
-          <span className="text-Body-Medium font-400  cursor-pointer text-primary">
-            Shopping cart
-          </span>
-          <Image
-            src={ArrowDownIcon}
-            alt="arrow down"
-            className="-rotate-90 cursor-pointer"
-          />
-          <span className="text-primary text-Body-Medium font-400 cursor-pointer">
-            Checkout
-          </span>
-        </div>
+        
 
         {/* for billing information */}
         <div className="flex">

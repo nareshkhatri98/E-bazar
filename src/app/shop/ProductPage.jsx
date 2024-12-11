@@ -7,6 +7,7 @@ import Start from '@/components/Start';
 import { allProudcts } from '@/assets/products';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '@/Redux/slice/cartSlice';
+import Link from 'next/link';
 
 const ProductPage = () => {
    const items =  useSelector((state)=>state.allCart.cart);
@@ -15,11 +16,14 @@ const ProductPage = () => {
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
                 {allProudcts.map((product) => (
-                    <div
+                
+                   <div
                         key={product.id}
                         className="w-full border relative group bg-white rounded-lg overflow-hidden shadow-sm"
                     >
+                      <Link key={product.id} href={`/shop/${product.id}`} passHref>
                         {/* Product Image */}
                         <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80">
                             <Image
@@ -67,9 +71,14 @@ const ProductPage = () => {
                                 <Image src={HeartIcon} alt="Heart Icon" className="w-6 h-6" />
                             </motion.div>
                         </div>
+                        </Link>
+                       
                     </div>
+                    
                 ))}
+               
             </div>
+             
         </div>
     );
 };
