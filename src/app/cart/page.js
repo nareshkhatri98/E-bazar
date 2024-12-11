@@ -10,6 +10,8 @@ import { bannerIcon } from "@/assets/Banner";
 import NavbarBakup from "@/components/NavbarBakup";
 import { useSelector } from "react-redux";
 import CartData from "./CartData";
+import Link from "next/link";
+
 
 const page = () => {
   const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
@@ -72,12 +74,14 @@ const page = () => {
 
               {/* for button*/}
               <div className="flex items-center justify-between">
+                <Link href='/shop'>
                 <button
                   className="w-[168px] h-[45px] rounded-[43px] bg-Gray-0.5 mt-4 text-Body-Small font-600 text-Gray-7  p-[14px] pr-[32px] pb-[14px] pl-[32px]
 "
                 >
                   Return to shop
                 </button>
+                </Link>
                 <button
                   className="w-[168px] h-[45px] rounded-[43px] bg-Gray-0.5 mt-4 text-Body-Small font-600 text-Gray-7  p-[14px] pr-[32px] pb-[14px] pl-[32px]
 "
@@ -114,7 +118,7 @@ const page = () => {
             </h1>
             <div className="flex items-center justify-between  m-5 ">
               <p className="text-Body-Small font-400 text-Gray-7">Subtotal:</p>
-              <p className="text-Body-Small font-500 text-Gray-9 ">$84.00</p>
+              <p className="text-Body-Small font-500 text-Gray-9 ">{totalPrice}</p>
             </div>
             <hr />
             <div className="flex items-center justify-between  m-4 ">
@@ -124,11 +128,12 @@ const page = () => {
             <hr />
             <div className="flex items-center justify-between  m-4 ">
               <p className="text-Body-Small font-400 text-Gray-7">Total:</p>
-              <p className="text-Body-Small font-500 text-Gray-9 ">$84.00</p>
+              <p className="text-Body-Small font-500 text-Gray-9 ">{totalPrice}</p>
             </div>
-            <button className="w-[376px] h-[51px] bg-primary m-3 text-Body-Medium font-600 text-white rounded-[43px]">
+            <Link href="/Checkout">
+            <button className="w-[376px] h-[51px] bg-primary m-3 text-Body-Medium font-600 text-white rounded-[43px]" >
               Proceed to checkout
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>

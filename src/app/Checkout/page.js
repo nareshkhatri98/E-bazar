@@ -9,8 +9,12 @@ import { RedCapsicum1 } from "@/assets/social/social";
 import Navbar from "@/components/Navbar";
 import NavbarBakup from "@/components/NavbarBakup";
 import { bannerIcon } from "@/assets/Banner";
+import { useSelector } from "react-redux";
 
 const page = () => {
+
+   const {cart,totalQuanity, totalPrice} = useSelector((state)=>state.allCart)
+   console.log(cart)
   return (
     <>
     <hr />
@@ -143,39 +147,32 @@ const page = () => {
             <h1 className="text-Body-XL text-Gray-9 font-500 m-6">
               Order Summery
             </h1>
-            <div className="w-[376px] h-[60px]  flex items-center justify-between ml-[6px] ">
-              <div className="flex items-center">
-                <Image
-                  src={GreenAppleIcon}
-                  alt=" GreenAppleIcon"
-                  height={60}
-                  width={60}
-                />
-                <p className="ml-[6px]">
-                  Green Capsicum <span>x5</span>
-                </p>
-              </div>
-              <p className="ml-24">$70.00</p>
+            <div className="w-[376px] h-[60px]   items-center justify-between ml-[6px] ">
+               {
+                cart.map((cartItem)=>(  
+                   <div className="flex items-center">
+                  <Image
+                    src={cartItem.image}
+                    alt=" GreenAppleIcon"
+                    height={60}
+                    width={60}
+                  />
+                  <p className="ml-[6px]">
+                    {cartItem.title} <span>x{cartItem.quantity}</span>
+                  </p>
+                </div>
+
+                ))
+               }
+           
+             
             </div>
-            <div className="w-[376px] h-[60px] flex items-center justify-between ml-[6px] ">
-              <div className="flex items-center">
-                <Image
-                  src={RedCapsicum1}
-                  alt=" GreenAppleIcon"
-                  height={60}
-                  width={60}
-                />
-                <p className="ml-[6px]">
-                  Red Capsicum <span>x1</span>
-                </p>
-              </div>
-              <p className="ml-24">$70.00</p>
-            </div>
+            
 
             {/* for calculation */}
-            <div className=" flex items-center mt-[12px] m-3">
+            <div className=" flex items-center mt-[12px] m-7">
               <p className="">Subtotal:</p>
-              <p className="ml-[256px]">$84.00</p>
+              <p className="ml-[256px]">{totalPrice}</p>
             </div>
             <hr className="m-5" />
             <div className=" flex items-center mt-[12px] m-3">
@@ -185,7 +182,7 @@ const page = () => {
             <hr className="m-5" />
             <div className=" flex items-center mt-[12px] m-3">
               <p className="">Total:</p>
-              <p className="ml-[269px]">$84.00</p>
+              <p className="ml-[269px]">{totalPrice}</p>
             </div>
 
             {/* for payment method */}
