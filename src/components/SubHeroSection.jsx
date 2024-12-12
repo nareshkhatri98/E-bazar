@@ -13,6 +13,7 @@ import {
   Logo,
 } from "@/assets/images";
 import Link from 'next/link';
+import WishList from '@/app/wishlist/page';
 
 const SubHeroSection = () => {
   const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
@@ -50,7 +51,9 @@ const SubHeroSection = () => {
           {/* Heart Icon */}
           <div className="border-r-2 border-[#E6E6E6] pr-4">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Link href='wishlist'>
               <Image src={HeartIcon} className="h-6 w-6 lg:h-8 lg:w-8 cursor-pointer" alt='HeartIcon' />
+              </Link>
             </motion.div>
           </div>
 

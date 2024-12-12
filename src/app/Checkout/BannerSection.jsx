@@ -27,6 +27,9 @@ const BannerSection = ({
       case 'about':
         return 'About Us';
       
+        case 'wishlist':
+          return 'Wishlist'
+      
       default:
         return 'Welcome to Our Shop';
     }

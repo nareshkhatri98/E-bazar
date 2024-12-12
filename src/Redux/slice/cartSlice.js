@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { allProudcts } from "@/assets/products";
+import { toast } from "react-toastify";
 
 const initialState = {
   cart: [],
@@ -28,7 +29,12 @@ export const cartSlice = createSlice({
           ...product,
           quantity: 1,
           subtotal: parseFloat(product.price.replace("$", "")),
+          
         });
+        setTimeout(() => {
+          toast.success("Item added to cart successfully!");
+        }, 0);
+       
       }
 
       // Update totalQuantity and totalPrice

@@ -7,7 +7,7 @@ import SideBar from "./SideBar";
 import AccountSection from "./AccountSection";
 import BillingAddress from "./BillingAddress";
 import ChangePassword from "./ChangePassword";
-import BannerSection from "../register/BannerSection";
+
 import HeroBanner from "./HeroBanner";
 
 const page = () => {

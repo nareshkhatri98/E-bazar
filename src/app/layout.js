@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
        <Provider store={store}>
         <Init/>
       <body className={`antialiased`}>
+    
      <Hero />
      <SubHeroSection />
      

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 
 export function middleware(request) {
-  console.log(middleware)
+ 
   const token = request.cookies.get("authToken")?.value;
 
   if (token?.length > 0) {
