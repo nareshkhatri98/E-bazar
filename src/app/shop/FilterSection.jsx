@@ -4,6 +4,7 @@ import { ArrowDownIcon } from '@/assets/icons'
 import { CrossIcon } from '@/assets/shop-page-images'
 
 const FilterSection = () => {
+
     return (
         <>
 
@@ -21,8 +22,13 @@ const FilterSection = () => {
                             <Image src={ArrowDownIcon} alt='arrow' className='cursor-pointer ml-10' />
                         </div>
                         <div className=' flex  items-center border-2 px-10 p-2 '>
-                            <p className='text-Body-Small text-Gray-7 font-400'>Select Rating </p>
-                            <Image src={ArrowDownIcon} alt='arrow' className='cursor-pointer ml-10' />
+                        <select className='text-Body-Small text-Gray-7 font-400'>Sort by: rating
+                            <option value="1" className='text-Body-Small text-Gray-7 font-400'>Sort by :1  rating </option>
+                            <option value="2" className='text-Body-Small text-Gray-7 font-400'>Sort by: 2  rating</option>
+                           <option value="3" className='text-Body-Small text-Gray-7 font-400'>Sort by: 3  rating</option>
+                           <option value="4" className='text-Body-Small text-Gray-7 font-400'>Sort by:4  rating</option>
+                           <option value="5" className='text-Body-Small text-Gray-7 font-400'>Sort by:5  rating</option>
+                            </select>
                         </div>
                     </div>
 
@@ -30,8 +36,13 @@ const FilterSection = () => {
                     {/* right filter */}
                     <div className='flex items-center gap-4'>
                         <div className=' flex  items-center border-2 px-10 p-2 '>
-                            <p className='text-Body-Small text-Gray-7 font-400'>Sort by: Latest </p>
-                            <Image src={ArrowDownIcon} alt='arrow' className='cursor-pointer ml-10' />
+                            
+                            <select className='text-Body-Small text-Gray-7 font-400'>Sort by: Latest 
+                            <option value="relevant">Sort by : Relevant</option>
+                            <option value="low-high">Sort by: Low to Hight</option>
+                           <option value="high-low">Sort by: High to Low</option>
+
+                            </select>
                         </div>
                         <div className='flex  items-center border-2 px-10 p-2 '>
                             <p className='text-Body-Small text-Gray-7 font-400'> Show: 16 </p>
