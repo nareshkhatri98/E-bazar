@@ -21,61 +21,57 @@ export const cartSlice = createSlice({
       // Check if the product already exists in the cart
       const existingItem = state.cart.find((item) => item.id === product.id);
 
-      if (existingItem) {
-        existingItem.quantity += 1;
-        existingItem.subtotal = existingItem.quantity * parseFloat(existingItem.price.replace("$", ""));
-      } else {
+      if (!existingItem) {
+        // Add new product to cart
         state.cart.push({
           ...product,
           quantity: 1,
           subtotal: parseFloat(product.price.replace("$", "")),
-          
         });
+        state.totalQuantity += 1;
+        state.totalPrice += parseFloat(product.price.replace("$", ""));
         setTimeout(() => {
           toast.success("Item added to cart successfully!");
         }, 0);
-       
+      } else {
+        // If the item already exists, increase the quantity
+        existingItem.quantity += 1;
+        existingItem.subtotal = existingItem.quantity * parseFloat(existingItem.price.replace("$", ""));
+        state.totalQuantity += 1;
+        state.totalPrice += parseFloat(existingItem.price.replace("$", ""));
       }
-
-      // Update totalQuantity and totalPrice
-      state.totalQuantity += 1;
-      state.totalPrice += parseFloat(product.price.replace("$", ""));
     },
 
     removeItem: (state, action) => {
       const itemToRemove = state.cart.find((item) => item.id === action.payload);
-    
+
       if (itemToRemove) {
         // Update totalQuantity and totalPrice
         state.totalQuantity -= itemToRemove.quantity;
         state.totalPrice -= itemToRemove.subtotal;
-    
+
         // Remove the item from the cart
         state.cart = state.cart.filter((item) => item.id !== action.payload);
       }
-    
-      // to make totalPrice and totalQuantity are 0 when cart is empty
+
+      // Ensure totalPrice and totalQuantity are 0 when cart is empty
       if (state.cart.length === 0) {
         state.totalQuantity = 0;
         state.totalPrice = 0;
       }
     },
-    
 
     increaseItemQuantity: (state, action) => {
       const productId = action.payload;
       const product = state.cart.find((item) => item.id === productId);
-    
+
       if (product) {
         product.quantity += 1;
         product.subtotal = product.quantity * parseFloat(product.price.replace("$", ""));
-        
-        // Update totalQuantity and totalPrice
         state.totalQuantity += 1;
         state.totalPrice += parseFloat(product.price.replace("$", ""));
       }
     },
-    
 
     decreaseItemQuantity: (state, action) => {
       state.cart = state.cart.map((item) => {
@@ -83,11 +79,11 @@ export const cartSlice = createSlice({
           const newQuantity = item.quantity - 1;
           const price = parseFloat(item.price.replace("$", ""));
           const newSubtotal = newQuantity * price;
-    
+
           // Update totalQuantity and totalPrice
           state.totalQuantity -= 1;
           state.totalPrice -= price;
-    
+
           return {
             ...item,
             quantity: newQuantity,
@@ -97,7 +93,6 @@ export const cartSlice = createSlice({
         return item;
       });
     },
-    
   },
 });
 
