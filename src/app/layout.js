@@ -1,27 +1,40 @@
 "use client";
-import Hero from "@/components/Hero";
-import "./globals.css";
-import SubHeroSection from "@/components/SubHeroSection";
-import Navbar from "@/components/Navbar";
-import { store } from "@/Redux/store";
+import React, { Suspense } from "react";
 import { Provider } from "react-redux";
-import Init from "@/Provider/Init";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
+import { store, persistor } from "@/Redux/store";
+
+import { Toaster } from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
+
+// Lazy load components
+const Hero = React.lazy(() => import("@/components/Hero"));
+const SubHeroSection = React.lazy(() => import("@/components/SubHeroSection"));
+const Init = React.lazy(() => import("@/Provider/Init"));
 
 export default function RootLayout({ children }) {
-  let persistor = persistStore(store);
   return (
     <html lang="en">
-      <head>
-        {/* Include any necessary metadata, links, or title tags here */}
-      </head>
-      <body className={`antialiased`}>
+      <body className="antialiased">
         <Provider store={store}>
-          <PersistGate loading={<><h1>Loading...</h1></>} persistor={persistor}>
+          <PersistGate loading={null} persistor={persistor}>
             <Init />
             <Hero />
             <SubHeroSection />
+            <Toaster
+              position="top-right"
+              autoClose={1000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
+
             {children}
           </PersistGate>
         </Provider>

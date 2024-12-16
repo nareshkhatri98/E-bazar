@@ -1,55 +1,65 @@
-import { configureStore } from '@reduxjs/toolkit'
-import reducer from './slice/counterSlice'
-import { productApi } from './api/productApi'
-import { authApi } from './api/authApi'
-import authReducer from './slice/authSlice'
-import cartReducer from './slice/cartSlice'
-import filterReducer from './slice/filterSlice' // Added filter slice
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore } from 'redux-persist';
+import wishListReducer from './slice/wishListSlice'
 
-// redux-persist imports
-import storage from 'redux-persist/lib/storage'
-import { persistReducer } from 'redux-persist'
-import { combineReducers } from '@reduxjs/toolkit'
+// Import reducers and APIs
+import counterReducer from './slice/counterSlice';
+import authReducer from './slice/authSlice';
+import cartReducer from './slice/cartSlice';
+import filterReducer from './slice/filterSlice';
+import { productApi } from './api/productApi';
+import { authApi } from './api/authApi';
 
-// Redux-persist configuration
+// Redux-persist configurations
 const persistConfig = {
   key: 'root',
   storage,
-}
+  whitelist: ['auth', 'allCart', 'wishList'], // Ensure 'wishList' is in the whitelist
+};
+
 
 const authPersistConfig = {
   key: 'auth',
   storage,
-}
+};
 
 const cartPersistConfig = {
   key: 'cart',
   storage,
-}
+};
+const wishlistPersistConfig = {
+  key: 'wishList',
+  storage,
+};
 
-// Persist specific slices
-const persistedAuthReducer = persistReducer(authPersistConfig, authReducer)
-const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer)
+// Persist individual reducers
+const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
+const persistedCartReducer = persistReducer(cartPersistConfig, cartReducer);
+const persistWishListReducer = persistReducer(wishlistPersistConfig, wishListReducer);
 
-// Combine all reducers
+// Combine reducers
 const rootReducer = combineReducers({
-  counter: reducer,
-  auth: persistedAuthReducer, // Auth with persistence
-  allCart: persistedCartReducer, // Cart with persistence
-  filter: filterReducer, // Filter slice
-  [productApi.reducerPath]: productApi.reducer, // Product API slice
-  [authApi.reducerPath]: authApi.reducer, // Auth API slice
-})
+  counter: counterReducer,
+  auth: persistedAuthReducer,
+  allCart: persistedCartReducer,
+  filter: filterReducer,
+  wishList:persistWishListReducer,
+  [productApi.reducerPath]: productApi.reducer,
+  [authApi.reducerPath]: authApi.reducer,
+});
 
-// Apply persistence to the rootReducer
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+// Persist the root reducer
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Configure store
 export const store = configureStore({
-  reducer: persistedReducer, // Replace entire reducer with persistedReducer
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false, // Required for redux-persist
-    }).concat(productApi.middleware, authApi.middleware), // Add API middleware
-})
+    }).concat(productApi.middleware, authApi.middleware),
+});
 
+// Persistor for PersistGate
+export const persistor = persistStore(store);

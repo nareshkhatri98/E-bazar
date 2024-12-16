@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { allProudcts } from "@/assets/products";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const initialState = {
   cart: [],
@@ -30,15 +30,14 @@ export const cartSlice = createSlice({
         });
         state.totalQuantity += 1;
         state.totalPrice += parseFloat(product.price.replace("$", ""));
-        setTimeout(() => {
-          toast.success("Item added to cart successfully!");
-        }, 0);
+        toast.success("Item added to cart successfully!");
       } else {
         // If the item already exists, increase the quantity
         existingItem.quantity += 1;
         existingItem.subtotal = existingItem.quantity * parseFloat(existingItem.price.replace("$", ""));
         state.totalQuantity += 1;
         state.totalPrice += parseFloat(existingItem.price.replace("$", ""));
+        toast.success("Item quantity updated!");
       }
     },
 
@@ -52,6 +51,7 @@ export const cartSlice = createSlice({
 
         // Remove the item from the cart
         state.cart = state.cart.filter((item) => item.id !== action.payload);
+        toast.success("Item remove successfully");
       }
 
       // Ensure totalPrice and totalQuantity are 0 when cart is empty
@@ -70,6 +70,7 @@ export const cartSlice = createSlice({
         product.subtotal = product.quantity * parseFloat(product.price.replace("$", ""));
         state.totalQuantity += 1;
         state.totalPrice += parseFloat(product.price.replace("$", ""));
+        toast.success("Item quantity increased!");
       }
     },
 
@@ -83,6 +84,7 @@ export const cartSlice = createSlice({
           // Update totalQuantity and totalPrice
           state.totalQuantity -= 1;
           state.totalPrice -= price;
+          toast.success("Item quantity decreased!");
 
           return {
             ...item,

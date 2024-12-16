@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 const Hero = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -18,6 +19,7 @@ const Hero = () => {
     dispatch(setUserData({}));
     document.cookie = "authToken=;";
     router.push('/')
+    toast.success("Logout Success")
   };
 
   return (
@@ -51,9 +53,11 @@ const Hero = () => {
             <div className="ml-5 cursor-pointer ">
               {isAuthenticated ? (
                 <>
+                <Link href='/profile'>
                   <span className=" text-Body-Tiny font-400">
                     {userData?.firstName}
                   </span>
+                </Link>
                 </>
               ) : (
                 <>

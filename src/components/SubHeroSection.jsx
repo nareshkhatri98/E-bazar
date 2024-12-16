@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
+
 import {
   CartIcon,
   HeartIcon,
@@ -13,10 +14,13 @@ import {
   Logo,
 } from "@/assets/images";
 import Link from 'next/link';
-import WishList from '@/app/wishlist/page';
+
 
 const SubHeroSection = () => {
   const { cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
+  const { wishlist, items } = useSelector((state) => state.wishList);
+  
+    
   return (
     <div>
       <div className="container mx-auto flex flex-wrap items-center justify-between px-4 lg:px-0 py-4">
@@ -49,10 +53,15 @@ const SubHeroSection = () => {
         {/* Icons Section */}
         <div className="flex items-center">
           {/* Heart Icon */}
-          <div className="border-r-2 border-[#E6E6E6] pr-4">
+          <div className="border-r-2 border-[#E6E6E6] pr-4 relative">
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Link href='wishlist'>
               <Image src={HeartIcon} className="h-6 w-6 lg:h-8 lg:w-8 cursor-pointer" alt='HeartIcon' />
+              <div className="absolute top-[-5px] left-3 cursor-pointer">
+              <span className="bg-[#2C742F] text-white w-[20px] h-[20px] lg:w-[25px] lg:h-[25px] flex items-center justify-center rounded-full cursor-pointer text-xs lg:text-sm">
+                {wishlist.length}
+              </span>
+              </div>
               </Link>
             </motion.div>
           </div>

@@ -7,6 +7,7 @@ import Button from '@/components/Button';
 import { useLoginMutation } from '@/Redux/api/authApi';
 import { setAuthenticated, setUserData } from '@/Redux/slice/authSlice';
 import { useDispatch } from 'react-redux';
+import toast from 'react-hot-toast';
 
 // Validation Schema
 const validationSchema = object({
@@ -33,14 +34,19 @@ const LoginForm = () => {
           document.cookie = `authToken=${res?.data?.token}`;
           localStorage.setItem("userData", JSON.stringify(res?.data?.user));
           router.replace("/");
+  
+          toast.success("Login Successfully");
+  
           dispatch(setAuthenticated(true));
           dispatch(setUserData(res?.data?.user));
         }
       } catch (error) {
-        console.error('Login Error:', error);
+        console.log(error); // Check the structure of the error object
+        toast.error(error?.message || "Invalid email or password");
       }
     },
   });
+  
 
   return (
     <div className="container mx-auto">

@@ -5,6 +5,7 @@ import { allProudcts } from '@/assets/products'; // Assuming this is a static ar
 import Image from 'next/image';
 
 import { addToCart, decreaseItemQuantity, increaseItemQuantity } from '@/Redux/slice/cartSlice';
+import { addToWishlist, removeFromWishlist } from '@/Redux/slice/wishListSlice'; // Make sure to include removeFromWishlist action
 
 import {
   productIcon1,
@@ -14,7 +15,6 @@ import {
 } from "@/assets/shop-page-images";
 
 import Star from "@/components/Start";
-
 import {
   FacebookIcon,
   farmaryIcon,
@@ -25,7 +25,7 @@ import {
   rectangleIcon,
   TwitterIcon,
 } from "@/assets/icons";
-import Footer from "@/components/Footer";
+
 import Description from '@/app/product-page/Description';
 import NavbarBakup from '@/components/NavbarBakup';
 import BannerSection from '@/app/Checkout/BannerSection';
@@ -36,6 +36,7 @@ const ProductDetailPage = ({ params }) => {
   if (!product) return <div>Product not found</div>;
 
   const dispatch = useDispatch();
+  const { wishlist, items } = useSelector((state) => state.wishList);
 
   // Get the cart item corresponding to the product
   const cartItem = useSelector((state) =>
@@ -43,6 +44,18 @@ const ProductDetailPage = ({ params }) => {
   );
   const quantity = cartItem ? cartItem.quantity : 1;
 
+  // Check if the product is already in the wishlist
+  const isInWishlist = wishlist.includes(product.id);
+  console.log("Wishlist from Redux:", wishlist);
+
+  // Handle adding/removing product from wishlist
+  const handleWishlistToggle = () => {
+    if (isInWishlist) {
+      dispatch(removeFromWishlist(product.id)); // Dispatch remove action
+    } else {
+      dispatch(addToWishlist(product)); // Dispatch add action
+    }
+  };
 
   return (
     <>
@@ -170,7 +183,7 @@ const ProductDetailPage = ({ params }) => {
                 </div>
               </div>
               <div className="bg-primary w-[447px] h-[51px] rounded-[43px] p-[10px] m-[12px] flex items-center justify-center gap-4">
-                <button onClick={()=>dispatch(addToCart(product))} className="text-center text-white">
+                <button onClick={() => dispatch(addToCart(product))} className="text-center text-white">
                   Add to Cart
                 </button>
                 <Image
@@ -179,13 +192,13 @@ const ProductDetailPage = ({ params }) => {
                   alt="rectangel"
                 />
               </div>
-              <div className="bg-[#20B5261A] w-[52px] h-[52px] rounded-[43px] ml-[10px] ">
+              <button onClick={handleWishlistToggle}>
                 <Image
-                  src={HeartIcon}
+                  src={isInWishlist ? HeartIcon : HeartIcon}  // Change HeartIcon to a filled one if necessary
                   alt="HeartIcon"
                   className="flex items-center m-[10px] p-[2px]"
                 />
-              </div>
+              </button>
             </div>
             <hr className="border mt-[20px]" />
 

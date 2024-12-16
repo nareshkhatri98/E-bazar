@@ -57,7 +57,7 @@ const RegisterForm = () => {
         {
           
         }
-        <div className="w-[520px] h-[600px] bg-white border border-[#F2F2F2] shadow-lg mt-[80px] ml-[33%]">
+        <div className="w-[520px] h-auto bg-white border border-[#F2F2F2] shadow-lg mt-[80px] ml-[33%]">
           <h1 className="text-center text-Heading-05 font-600 text-Gray-9 p-[24px]">
             Create Account
           </h1>

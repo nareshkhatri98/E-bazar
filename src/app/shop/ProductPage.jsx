@@ -14,7 +14,7 @@ const removeDollar = (price) => {
   return parseInt(price.replace('$', ''));
 }
 
-console.log(removeDollar("$15.88"));
+// console.log(removeDollar("$15.88"));
 
 const ProductPage = () => {
   const items = useSelector((state) => state.allCart.cart);
@@ -35,7 +35,7 @@ const ProductPage = () => {
       return 0; // Default (Relevant) -> No sorting
     });
 
-  console.log(filteredProducts);
+  // console.log(filteredProducts);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
