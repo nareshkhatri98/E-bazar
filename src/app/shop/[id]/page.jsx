@@ -79,7 +79,7 @@ const ProductDetailPage = ({ params }) => {
             {/* Review Section */}
             <div className="flex items-center gap-6 mt-[12px]">
               <div className="flex">
-                <Star star={3} />
+                <Star star={product.rating} />
               </div>
               <span className="text-Body-Small font-400 text-Gray-6 ml-[-10px]">
                 4 Review
