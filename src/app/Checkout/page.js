@@ -14,11 +14,12 @@ import BannerSection from "./BannerSection";
 import InputField from "@/components/InputField";
 
 
+
 let validation = object({
   firstName: string().required('First name is required'),
   lastName: string().required('Last name is required'),
   email: string().email('Invalid email address').required('Email is required'),
-  company: string().required('Company Name  is required'),
+  companyName: string().required('Company Name  is required'),
   country: string().required('Country is required'),
   zipCode: string().required('Zip Code is required'),
   stateName: string().required('State/Province is required'),
@@ -38,7 +39,7 @@ const page = () => {
        firstName: '',
        lastName: '',
        email: '',
-       company: '',
+       companyName: '',
        country:'',
        zipCode:',',
        stateName:'',
@@ -68,23 +69,22 @@ const page = () => {
                 <p className="text-Body-Small font-400 text-Gray-9">
                   First name
                 </p>
+            
+                <InputField pageType='checkout'
+                 type="text"
+                 placeholder="your first name"
+                 name="firstName"
+                 onChange={formik.handleChange}
+                 value={formik.values.firstName}
+                 error={formik.errors.firstName} /> 
                
-                <input
-                  type="text"
-                  placeholder="your first name"
-                  name="firstName"
-                  onChange={formik.handleChange}
-                  value={formik.values.firstName}
-                  error={formik.errors.firstName}
-                  
-                  className="border-[0.0625rem] mt-2 w-[17.5rem] h-[3.0625rem] rounded-[0.375rem] p-2"
-                />
               </div>
               <div className="">
                 <p className="text-Body-Small font-400 text-Gray-9">
                   Last name
                 </p>
-                <input
+                <InputField
+                  pageType='checkout'
                   type="text"
                   name="lastName"
                   value={formik.values.lastName}
@@ -97,7 +97,8 @@ const page = () => {
                 <p className="text-Body-Small font-400 text-Gray-9">
                   Company name
                 </p>
-                <input
+                <InputField
+                pageType='checkout'
                   type="text"
                   name="companyName"
                   value={formik.values.companyName}
@@ -111,7 +112,8 @@ const page = () => {
             <p className="text-Body-Small font-400 text-Gray-9 mt-4">
               Street Address
             </p>
-            <input
+            <InputField
+            pageType='checkout'
               type="text"
               name="email"
               value={formik.values.email}
@@ -127,7 +129,8 @@ const page = () => {
                   Country / Region
                 </p>
                 
-                <input
+                <InputField 
+                pageType='checkout'
                   type="text"
                   name="country"
                   value={formik.values.country}
@@ -139,7 +142,8 @@ const page = () => {
               </div>
               <div className="">
                 <p className="text-Body-Small font-400 text-Gray-9">States</p>
-                <input
+                <InputField
+                pageType='checkout'
                   type="text"
                   placeholder="your last name"
                  name="stateName"
@@ -151,7 +155,8 @@ const page = () => {
               </div>
               <div className="">
                 <p className="text-Body-Small font-400 text-Gray-9">Zip code</p>
-                <input
+                <InputField
+                 pageType='checkout'
                   type="text"
                   placeholder="Zip Code"
                   name="zipCode"
@@ -178,7 +183,8 @@ const page = () => {
               Order Notes (Optional)
             </p>
             <div>
-              <input
+              <InputField
+              pageType='checkout'
                 type="text"
                 value={formik.values.orderNotes}
                 error={formik.errors.orderNotes}
@@ -240,7 +246,7 @@ const page = () => {
             </div>
 
             {/* Payment Method */}
-            <form action="#">
+            <form  onSubmit={formik.handleSubmit}>
               <div className="m-6">
                 <h1 className="text-lg font-bold mb-3">Payment Method</h1>
                 <div className="flex items-center gap-2 mt-2">

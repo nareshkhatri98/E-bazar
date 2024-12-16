@@ -2,15 +2,40 @@
 import Footer from "@/components/Footer";
 import React from "react";
 import Image from "next/image";
-import { HomeIcon } from "@/assets/shop-page-images";
-import { ArrowDownIcon } from "@/assets/icons";
+import { MapIcon } from "@/assets/Banner";
 import { EmailIcon, LocationICon, TelephoneIcon } from "@/assets/images";
-import Navbar from "@/components/Navbar";
+
 import NavbarBakup from "@/components/NavbarBakup";
-import { bannerIcon, MapIcon } from "@/assets/Banner";
+
 import BannerSection from "../Checkout/BannerSection";
 
+import { useFormik } from 'formik';
+import { object, string } from 'yup';
+import InputField from '@/components/InputField';
+
+
+// Validation schema using Yup
+let validationSchema = object({
+  fullName: string().required('Full name is required'),
+  message: string().required('Message is required'),
+  subjects: string().required('Subjects is required'),
+  email: string().email('Invalid email address').required('Email is required'),
+  
+});
+
 const page = () => {
+    const formik = useFormik({
+      initialValues: {
+       fullName: '',
+        message: '',
+        subjects:'',
+        email: '',
+      },
+      validationSchema, // Using validationSchema for Yup
+      onSubmit: (values) => {
+        console.log('Form values:', values);
+      },
+    });
   return (
     <>
     <hr />
@@ -49,7 +74,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="w-[984px] h-[507px]  mt-[80px] ml-6 rounded-[8px] border border-Gray-1 shadow-lg ">
+          <div className="w-[984px] h-auto mt-[80px] ml-6 rounded-[8px] border border-Gray-1 shadow-lg ">
             <h1 className="text-Body-XXL text-Gray-9 font-600 ml-[50px] mt-[44px]">
               {" "}
               Just Say Hello!
@@ -60,30 +85,48 @@ const page = () => {
                 your project and you need my help? Feel free to contact me.
               </p>
             </div>
-            <form action="#">
+            <form action="#" onSubmit={formik.handleSubmit}>
               <div className="mt-6">
-                <input
+                <InputField
+                pageType='contact'
+                onchange={formik.handleChange}
+                values ={formik.fullName}
+                error = {formik.errors.fullName}
                   type="text"
-                  className="ml-[50px] w-[434px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border"
+                  name="fullName"
+                 
                   placeholder="Template Cookie"
                 />
-                <input
+                <InputField
+              pageType='contact'
+                onchange={formik.handleChange}
+                values ={formik.email}
+                error = {formik.errors.email}
                   type="text"
-                  className="ml-4 w-[434px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border"
+                  name="email"
+                 
                   placeholder="zakirsoft@gmail.com"
                 />
               </div>
-              <input
+              <InputField
+              onchange={formik.handleChange}
+              values ={formik.message}
+              error = {formik.errors.message}
                 type="text"
-                className="ml-[50px] w-[884px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4"
+                name="message"
+                className="ml-[10px] w-[884px] h-[49px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-2"
                 placeholder="Hello|"
               />
               <textarea
                 type="text"
-                className="ml-[50px] w-[884px] h-[98px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4"
+                name="subjects"
+                onChange={formik.handleBlur}
+                values={formik.subjects}
+                error = {formik.errors.subjects}
+                className="ml-[10px] w-[884px] h-[98px] rounded-[6px] font-400 p-4 text-Gray-6 text-[16px] border border-green-600 mt-4"
                 placeholder="subjects"
               />
-              <button className="ml-[50px] mt-[24px] w-[199px] h-[51px] bg-primary rounded-[43px] text-Body-Medium font-600 text-Gray-0.5">
+              <button className="ml-[10px] mt-[2px] w-[199px] h-[51px] bg-primary rounded-[43px] text-Body-Medium font-600 text-Gray-0.5">
                 Send Message
               </button>
             </form>

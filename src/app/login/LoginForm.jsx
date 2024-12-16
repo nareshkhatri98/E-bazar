@@ -59,6 +59,7 @@ const LoginForm = () => {
         <form onSubmit={formik.handleSubmit}>
           <div className="mb-4">
             <InputField
+            pageType='auth'
               type="text"
               name="email"
               placeholder="Email"
@@ -71,6 +72,7 @@ const LoginForm = () => {
 
           <div className="mb-4">
             <InputField
+            pageType='auth'
               type="password"
               name="password"
               placeholder="Password"

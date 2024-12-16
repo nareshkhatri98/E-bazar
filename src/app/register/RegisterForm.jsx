@@ -63,7 +63,8 @@ const RegisterForm = () => {
           </h1>
           <form onSubmit={formik.handleSubmit}>
             <div className="ml-[24px]">
-              <InputField 
+              <InputField
+                pageType='auth' 
                type="text"
                name="firstName"
                placeholder="First Name"
@@ -74,7 +75,7 @@ const RegisterForm = () => {
             
 
               <InputField
-                
+                  pageType='auth'
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
@@ -85,7 +86,7 @@ const RegisterForm = () => {
              
 
               <InputField
-               
+                 pageType='auth'
                 type="text"
                 name="email"
                 placeholder="Email"
@@ -96,7 +97,7 @@ const RegisterForm = () => {
              
 
               <InputField
-               
+                 pageType='auth'
                 type="text"
                 name="password"
                 placeholder="Password"
@@ -107,7 +108,7 @@ const RegisterForm = () => {
              
 
               <InputField
-               
+                 pageType='auth'
                 type="text"
                 name="confirmPassword"
                 placeholder="Confirm Password"
