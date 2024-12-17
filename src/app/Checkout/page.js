@@ -41,7 +41,7 @@ const page = () => {
        email: '',
        companyName: '',
        country:'',
-       zipCode:',',
+       zipCode:'',
        stateName:'',
        orderNotes:'',
      },
@@ -89,6 +89,7 @@ const page = () => {
                   name="lastName"
                   value={formik.values.lastName}
                   error={formik.errors.lastName}
+                  onChange={formik.handleChange}
                   placeholder="your last name"
                   className="border-[0.0625rem] mt-2 w-[17.5rem] h-[3.0625rem] rounded-[0.375rem] p-2"
                 />

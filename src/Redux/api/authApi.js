@@ -1,4 +1,5 @@
 // Need to use the React-specific entry point to allow generating React hooks
+
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Define a service using a base URL and expected endpoints
@@ -28,8 +29,19 @@ export const authApi = createApi({
         };
       },
     }),
+
+    // change password endpoint
+    changePassword: builder.mutation({
+      query: (body) => {
+        return {
+          url: `auth/change-password`,
+          method: "POST",
+          body: body,
+        };
+      },
+    })
   }),
 });
 
 // Export hooks for using the mutations in components
-export const { useSignupMutation, useLoginMutation } = authApi;
+export const { useSignupMutation, useLoginMutation, useChangePasswordMutation } = authApi;

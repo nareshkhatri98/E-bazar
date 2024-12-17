@@ -77,7 +77,7 @@ const SubHeroSection = () => {
             </div>
             <div className="ml-3 text-sm lg:text-base">
               <p>Shopping Cart</p>
-              <p>$57.70</p>
+              <p>{ totalPrice}</p>
             </div>
           </div>
         </div>
